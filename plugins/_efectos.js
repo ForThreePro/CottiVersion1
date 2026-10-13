@@ -7,29 +7,32 @@ moment.locale('es')
 
 let handler = async (m, { conn, usedPrefix, command }) => {
     const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
+    const ownerNum = '56931300864'
     let q = m.quoted ? m.quoted : m
     let mime = (q.msg || q).mimetype || ''
 
     if (!q.msg?.audioMessage && !q.msg?.pttMessage && !/audio/.test(mime)) {
-        return m.reply(`‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+        return m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐀𝐔𝐃𝐈𝐎 ﹒ EFECTOS ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
   ꒱ ׁ. ᘏ 𝗖𝗢𝗠𝗔𝗡𝗗𝗢 ׅ 𝆬 ָ֢ ෆ
-🎃 ࣪ ꕀ.${command} ˚. ᵎᵎ
-> Responde a una nota de voz pe
+🎀 ࣪ ꕀ.${command} ˚. ᵎᵎ
+> Responde a una nota de voz, reina ✨
 
-.⃟𖥔 ݁. 𖦹˙— \`\`EFECTOS\`\` 👻 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`EFECTOS\`\` 👑 —˙𖦹.꒷
 
-── *🎃 DISPONIBLES* ╏ 🦇
+── *🎀 DISPONIBLES* ╏ 💅
 🎧 ➛ bass, blown, deep, earrape
 🎧 ➛ fast, fat, nightcore, reverse
 🎧 ➛ robot, slow, chipmunk, grave
 🎧 ➛ agudo, vibrato
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇`)
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
+*Owner*: @${ownerNum}
+━━━━━━━━━━━`)
     }
 
     let effect = command.toLowerCase()
@@ -53,9 +56,9 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     }
 
     try {
-        await conn.sendMessage(m.chat, { react: { text: '🎃', key: m.key } })
+        await conn.sendMessage(m.chat, { react: { text: '🎀', key: m.key } })
         let audio = await q.download()
-        if (!audio) return m.reply(`‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇\n\n💀 Audio no disponible, reenvíalo pe`)
+        if (!audio) return m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n💔 Audio no disponible, reenvíalo reina ✨`)
 
         let tmp = tmpdir()
         let name = Date.now()
@@ -76,16 +79,16 @@ let handler = async (m, { conn, usedPrefix, command }) => {
             audio: out, 
             mimetype: 'audio/mpeg',
             ptt: false,
-            fileName: `LUX_X_YALLICO_${effect}_HALLOWEEN.mp3`
+            fileName: `COTTI_BOT_${effect}_COQUETTE.mp3`
         }, { quoted: m })
 
         try { fs.unlinkSync(input) } catch {}
         try { fs.unlinkSync(output) } catch {}
-        await conn.sendMessage(m.chat, { react: { text: '🎃', key: m.key } })
+        await conn.sendMessage(m.chat, { react: { text: '🎀', key: m.key } })
 
     } catch (e) {
         console.log(e)
-        m.reply(`‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇\n\n💀 Error embrujado: ${e.message.slice(0,400)}`)
+        m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n💔 Error coquette, reina: ${e.message.slice(0,400)} 🎀`)
     }
 }
 
