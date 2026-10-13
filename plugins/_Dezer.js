@@ -22,56 +22,56 @@ const handler = async (m, { conn, command }) => {
         let mime = (q.msg || q).mimetype || ''
 
         if (!mime ||!/audio|video/.test(mime)) {
-            let menuUso = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+            let menuUso = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐁𝐔𝐒𝐂𝐀𝐃𝐎𝐑 ﹒ ${command.toUpperCase()} ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
   ꒱ ׁ. ᘏ 𝗖𝗢𝗠𝗔𝗡𝗗𝗢 ׅ 𝆬 ָ֢ ෆ
-🎃 ࣪ ꕀ.${command} ˚. ᵎᵎ
-> *"Hasta el fantasma reconoce música en Halloween"*
+🎀 ࣪ ꕀ.${command} ˚. ᵎᵎ
+> *"La reina reconoce hasta tu playlist embrujada"*
 
 .⃟𖥔 ݁. 𖦹˙— \`\`BUSCADOR HALLOWEEN\`\` 🔍 —˙𖦹.꒷
 
-── *📝 DESCRIPCIÓN* ╏ 🎃
+── *📝 DESCRIPCIÓN* ╏ 💅
 🎵 ➛ Identifica canciones respondiendo a audios o videos
-🎃 ➛.song = Descarga el audio embrujado
+🎃 ➛.song = Descarga el audio coquette embrujado
 👻 ➛.letra = Muestra la letra + descarga el audio
 
-── *📖 USO* ╏ 🦇
-1️⃣ ➛ Responde a un audio con:.*${command}*
-2️⃣ ➛ Responde a un video con:.*${command}*
+── *📖 USO* ╏ 👑
+1️⃣ ➛ Responde a un audio con:.${command}
+2️⃣ ➛ Responde a un video con:.${command}
 
 ── *⏱️ NOTA* ╏ 🕯️
 📦 ➛ Analiza los primeros *${CLIP_SECONDS}s*
-🦇 ➛ Garfield con disfraz escucha mejor
+🎀 ➛ La reina escucha mejor con brillo
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 *Owner*: @${ownerNum}
 ━━━━━━━━━━━`
             return conn.sendMessage(m.chat, { text: menuUso, mentions: [ownerNum + '@s.whatsapp.net'] }, { quoted: m })
         }
 
-        await m.react('🎃')
+        await m.react('🎀')
         let buffer = await q.download()
         if (!buffer) throw new Error('Error al descargar el archivo')
 
-        await m.reply(`‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+        await m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐃𝐄𝐓𝐄𝐂𝐓𝐀𝐍𝐃𝐎 ﹒ ${command.toUpperCase()} ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`PROCESANDO\`\` 🎶 —˙𖦹.꒷
 
-── *📊 PROCESO* ╏ 🎃
+── *📊 PROCESO* ╏ 💅
 🕸️ ➛ Analizando ${CLIP_SECONDS}s de audio...
-📤 ➛ Subiendo al cementerio temporal...
+📤 ➛ Subiendo al tocador temporal...
 🎶 ➛ Invocando coincidencia...
-👻 ➛ Garfield fantasma afinando bigotes...
+🎀 ➛ Reina afinando brillos...
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`)
 
         let clip = await prepareClip(buffer, CLIP_SECONDS)
@@ -79,7 +79,7 @@ const handler = async (m, { conn, command }) => {
         let song = await recognizeUrl(url)
         let searchQuery = `${song.title} ${song.artist}`.replace(/\[.*?\]|\(feat.*?\)/gi, '').trim()
 
-        await m.react('🦇')
+        await m.react('✨')
         let search = await yts(searchQuery)
         let result = search.videos[0]
         if (!result) throw new Error('No se encontró la canción en YouTube')
@@ -94,27 +94,26 @@ const handler = async (m, { conn, command }) => {
         if(command === 'song'){
             await conn.sendMessage(m.chat, {
                 image: thumb,
-                caption: `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+                caption: `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐄𝐍𝐂𝐎𝐍𝐓𝐑𝐀𝐃𝐎 ﹒ SONG ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`RESULTADO\`\` 🎃 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`RESULTADO\`\` 🎀 —˙𖦹.꒷
 
-── *📊 INFORMACIÓN* ╏ 🎃
+── *📊 INFORMACIÓN* ╏ 💅
 📌 ➛ Título: *${title}*
 👤 ➛ Artista: *${author.name}*
 👁️ ➛ Vistas: *${vistas}*
 ⏱️ ➛ Duración: *${timestamp}*
 🔗 ➛ Link: ${shortUrl}
-👻 ➛ Encontrado por fantasma Garfield
 
-── *📥 DESCARGA* ╏ 🦇
-⬇️ ➛ Enviando audio embrujado...
-🍬 ➛ Preparando dulce sonoro...
+── *📥 DESCARGA* ╏ 👑
+⬇️ ➛ Enviando audio embrujado coquette...
+🎀 ➛ Preparando dulce sonoro...
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
             }, { quoted: m })
 
@@ -129,28 +128,27 @@ const handler = async (m, { conn, command }) => {
             await m.react('📝')
             const lyricsRes = await fetch(`https://api.lyrics.ovh/v1/${encodeURIComponent(song.artist)}/${encodeURIComponent(song.title)}`).then(r => r.json())
             let lyrics = lyricsRes.lyrics || 'No se encontró la letra'
-            if(lyrics.length > 1500) lyrics = lyrics.slice(0, 1500) + '\n\n...Letra muy larga, como siesta de fantasma 😴'
+            if(lyrics.length > 1500) lyrics = lyrics.slice(0, 1500) + '\n\n...Letra muy larga, como discurso de reina 👑'
 
             await conn.sendMessage(m.chat, {
-                text: `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+                text: `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐋𝐄𝐓𝐑𝐀 ﹒ LETRA ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`LETRA HALLOWEEN\`\` 🎤 —˙𖦹.꒷
 
-── *📊 CANCIÓN* ╏ 🎃
+── *📊 CANCIÓN* ╏ 🎀
 📌 ➛ *${title}* - *${author.name}*
-👻 ➛ Garfield fantasma tararea esto
 
 ── *📜 LETRA* ╏ 🕯️
 \`\`${lyrics}\`\`
 
-── *📥 DESCARGA* ╏ 🦇
-⬇️ ➛ Enviando audio embrujado...
+── *📥 DESCARGA* ╏ 👑
+⬇️ ➛ Enviando audio coquette...
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
             }, { quoted: m })
 
@@ -161,29 +159,28 @@ const handler = async (m, { conn, command }) => {
             }, { quoted: m })
         }
 
-        await m.react('🎃')
+        await m.react('🎀')
 
     } catch(e) {
-        await m.react('💀')
+        await m.react('💔')
         const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
-        let menuError = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+        let menuError = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐄𝐑𝐎𝐑 ﹒ ${command.toUpperCase()} ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💀 —˙𖦹.꒷
 
-── *📝 DESCRIPCIÓN* ╏ 🎃
+── *📝 DESCRIPCIÓN* ╏ 💅
 ❌ ➛ ${e.message}
-😿 ➛ El fantasma no pudo reconocerlo, se asustó
 
 ── *💡 SOLUCIÓN* ╏ 🕯️
-🔧 ➛ Usa un audio/video más claro
+🔧 ➛ Usa un audio/video más claro, reina
 🔧 ➛ Asegúrate que tenga música con voz
-🍬 ➛ Prueba con más dulces... digo, más volumen
+🎀 ➛ Prueba con más volumen
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
         return conn.sendMessage(m.chat, { text: menuError }, { quoted: m })
     }
@@ -238,6 +235,6 @@ function formatViews(views) {
 }
 
 handler.help = ['song', 'letra']
-handler.tags = ['buscador', 'halloween']
+handler.tags = ['buscador']
 handler.command = ['song', 'letra']
 export default handler
