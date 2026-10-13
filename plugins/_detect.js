@@ -18,20 +18,20 @@ export async function before(m, { conn }) {
 
         for (let user of update.participants) {
           if (update.action === 'promote') {
-            let txt = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+            let txt = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐃𝐄𝐓𝐄𝐂𝐓 ﹒ ADMIN ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`DADO\`\` 👑 —˙𖦹.꒷
 
-── *👤 ACCION* ╏ 🎃
+── *👤 ACCION* ╏ 🎀
 👑 ➛ Por: @${author.split('@')[0]}
-🎖️ ➛ Nuevo admin: @${user.split('@')[0]}
-👻 ➛ Fantasma dice: "Que cuide el cementerio"
+🎖️ ➛ Nueva admin: @${user.split('@')[0]}
+✨ ➛ Reina dice: "Que cuide el tocador" 💅
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
             await conn.sendMessage(update.id, {
               image: catalogoImg,
@@ -41,20 +41,20 @@ export async function before(m, { conn }) {
           }
 
           if (update.action === 'demote') {
-            let txt = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+            let txt = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐃𝐄𝐓𝐄𝐂𝐓 ﹒ ADMIN ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`QUITADO\`\` 💔 —˙𖦹.꒷
 
-── *👤 ACCION* ╏ 🎃
+── *👤 ACCION* ╏ 🎀
 👑 ➛ Por: @${author.split('@')[0]}
 💔 ➛ Ex-admin: @${user.split('@')[0]}
-💀 ➛ Fantasma: "Se quedó sin dulces"
+💅 ➛ Se quedó sin brillo
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
             await conn.sendMessage(update.id, {
               image: catalogoImg,
@@ -79,20 +79,19 @@ export async function before(m, { conn }) {
           let catalogoImg = { url: 'https://files.evogb.win/KMrBYL.jpg' }
 
           if (update.subject) {
-            let txt = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+            let txt = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐃𝐄𝐓𝐄𝐂𝐓 ﹒ NOMBRE ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`CAMBIADO\`\` 📝 —˙𖦹.꒷
 
-── *👤 ACCION* ╏ 🎃
+── *👤 ACCION* ╏ 🎀
 👑 ➛ Por: @${author.split('@')[0]}
 📝 ➛ Nuevo: *${update.subject}*
-👻 ➛ Fantasma: "Odio los lunes y los cambios"
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
             await conn.sendMessage(update.id, {
               image: catalogoImg,
@@ -102,20 +101,20 @@ export async function before(m, { conn }) {
           }
 
           if (update.desc) {
-            let txt = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+            let txt = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐃𝐄𝐓𝐄𝐂𝐓 ﹒ DESCRIPCION ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`CAMBIADA\`\` 📄 —˙𖦹.꒷
 
-── *👤 ACCION* ╏ 🎃
+── *👤 ACCION* ╏ 🎀
 👑 ➛ Por: @${author.split('@')[0]}
 📝 ➛ Nueva: ${update.desc.slice(0, 300) || 'Vacía'}
-🕸️ ➛ Descripción embrujada
+✨ ➛ Descripción coquette
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
             await conn.sendMessage(update.id, {
               image: catalogoImg,
@@ -125,20 +124,19 @@ export async function before(m, { conn }) {
           }
 
           if (update.icon || update.picture) {
-            let txt = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+            let txt = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐃𝐄𝐓𝐄𝐂𝐓 ﹒ FOTO ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`CAMBIADA\`\` 🖼️ —˙𖦹.꒷
 
-── *👤 ACCION* ╏ 🎃
+── *👤 ACCION* ╏ 🎀
 👑 ➛ Por: @${author.split('@')[0]}
-🖼️ ➛ Foto cambiada
-👻 ➛ Fantasma revisando nueva foto
+🖼️ ➛ Foto cambiada, reina
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
             await conn.sendMessage(update.id, {
               image: catalogoImg,
@@ -148,20 +146,20 @@ export async function before(m, { conn }) {
           }
 
           if (update.inviteCode) {
-            let txt = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+            let txt = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐃𝐄𝐓𝐄𝐂𝐓 ﹒ LINK ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`RESETEADO\`\` 🔗 —˙𖦹.꒷
 
-── *👤 ACCION* ╏ 🎃
+── *👤 ACCION* ╏ 🎀
 👑 ➛ Por: @${author.split('@')[0]}
 🔗 ➛ Nuevo: https://chat.whatsapp.com/${update.inviteCode}
-🎃 ➛ Link fresco como calabaza
+✨ ➛ Link fresco coquette
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
             await conn.sendMessage(update.id, {
               image: catalogoImg,
