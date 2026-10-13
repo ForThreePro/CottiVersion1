@@ -1,5 +1,4 @@
 let frasesAmor = [
-  // Las 8 originales
   "Ustedes 2 tienen química de café con pan a las 10pm ❤️",
   "Si el amor fuera wifi, ustedes tendrían señal completa 💘",
   "Destino dijo: tú + tú = problemas bonitos 😏",
@@ -8,8 +7,6 @@ let frasesAmor = [
   "El universo los juntó porque juntos son un caos lindo",
   "Modo dúo desbloqueado: complicidad nivel 100%",
   "Si esto fuera telenovela, ya habría beso con lluvia",
-
-  // +100 nuevas tiernas
   "Ustedes dos son de esas miradas que duran 3 horas",
   "Si sonríen juntos, el grupo se derrite 💕",
   "Tienen cara de 'vamos por un helado y hablamos tonterías'",
@@ -119,32 +116,34 @@ let handler = async (m, { conn, groupMetadata }) => {
   let participantes = groupMetadata.participants.map(p => p.id)
 
   if (participantes.length < 4) {
-    return m.reply('Necesito mínimo 4 personas en el grupo para sacar 2 parejas 😅')
+    return m.reply('‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n💅 Necesito mínimo 4 reinas en el grupo para 2 parejas 🎀')
   }
 
-  // Mezclar y sacar 4 personas random
   let mezclados = participantes.sort(() => Math.random() - 0.5)
   let seleccionados = mezclados.slice(0, 4)
 
-  // Formar 2 parejas
   let parejas = []
   for (let i = 0; i < seleccionados.length; i += 2) {
     parejas.push([seleccionados[i], seleccionados[i+1]])
   }
 
-  // Armar el mensaje
-  let texto = `💞 *FORMANDO 2 PAREJAS RANDOM* 💞\n\n`
+  let texto = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
+⤷ ┇ 𝐒𝐇𝐈𝐏𝐄𝐎 ﹒ 𝐇𝐀𝐋𝐋𝐎𝐖𝐄𝐄𝐍 ：✿ 。
+
+.⃟𖥔 ݁. 𖦹˙— \`\`2 PAREJAS RANDOM\`\` 🎀 —˙𖦹.꒷
+
+`
 
   for (let i = 0; i < parejas.length; i++) {
     let [p1, p2] = parejas[i]
     let frase = frasesAmor[Math.floor(Math.random() * frasesAmor.length)]
 
-    texto += `*Pareja ${i+1}*\n`
-    texto += `👉 @${p1.split('@')[0]} + @${p2.split('@')[0]}\n`
-    texto += `_${frase}_\n\n`
+    texto += `── *💖 Pareja ${i+1}* ╏ 🎀\n`
+    texto += `👑 ➛ @${p1.split('@')[0]} + @${p2.split('@')[0]}\n`
+    texto += `✨ _${frase}_\n\n`
   }
 
-  texto += `Que el amor los acompañe... o el chisme 😂`
+  texto += `━━━━━━━━━━━\n🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃\n> "Que el amor las acompañe, reinas" 💅`
 
   await conn.sendMessage(m.chat, {
     text: texto,
