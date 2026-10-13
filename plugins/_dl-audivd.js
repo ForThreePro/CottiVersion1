@@ -18,32 +18,32 @@ const handler = async (m, { conn }) => {
     const mime = (q.msg || q).mimetype || ''
 
     if (!/video/.test(mime)) {
-        let menuUso = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+        let menuUso = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐇𝐄𝐑𝐀𝐌𝐈𝐄𝐍𝐓𝐀 ﹒ AUDIVD ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
   ꒱ ׁ. ᘏ 𝗖𝗢𝗠𝗔𝗡𝗗𝗢 ׅ 𝆬 ָ֢ ෆ
-🎃 ࣪ ꕀ.audivd ˚. ᵎᵎ
-> *"Sacando el audio como fantasma saca almas"*
+🎀 ࣪ ꕀ.audivd ˚. ᵎᵎ
+> *"Sacando el audio con brillo de reina"*
 
 .⃟𖥔 ݁. 𖦹˙— \`\`HERRAMIENTA HALLOWEEN\`\` ⚙️ —˙𖦹.꒷
 
-── *📝 DESCRIPCIÓN* ╏ 🎃
-🎃 ➛ Extrae el audio de un video
-🦇 ➛ Convierte a MP3 192kbps
-👻 ➛ Fantasma Garfield escuchando
+── *📝 DESCRIPCIÓN* ╏ 💅
+🎀 ➛ Extrae el audio de un video
+✨ ➛ Convierte a MP3 192kbps
+👑 ➛ Reina escuchando
 
-── *📖 USO* ╏ 🦇
-1️⃣ ➛ Responde a un video con:.*audivd*
-2️⃣ ➛ O usa el alias:.*audio*
+── *📖 USO* ╏ 🎀
+1️⃣ ➛ Responde a un video con:.audivd
+2️⃣ ➛ O usa el alias:.audio
 
 ── *📦 FORMATO* ╏ 🕯️
 ⬇️ ➛ Salida: *MP3 44.1kHz Stereo*
-🎃 ➛ Calidad calabaza premium
+🎀 ➛ Calidad coquette premium
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 *Owner*: @${ownerNum}
 ━━━━━━━━━━━`
         return conn.sendMessage(m.chat, { text: menuUso, mentions: [ownerNum + '@s.whatsapp.net'] }, { quoted: m })
@@ -52,22 +52,22 @@ const handler = async (m, { conn }) => {
     let tempVideo
     let tempAudio
     try {
-        await react(conn, m, "🎃")
-        await m.reply(`‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+        await react(conn, m, "🎀")
+        await m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐏𝐑𝐎𝐂𝐄𝐒𝐀𝐍𝐃𝐎 ﹒ AUDIVD ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`PROCESANDO\`\` ⚙️ —˙𖦹.꒷
 
-── *📊 ESTADO* ╏ 🎃
-📥 ➛ Descargando video embrujado...
+── *📊 ESTADO* ╏ 💅
+📥 ➛ Descargando video coquette...
 🎵 ➛ Extrayendo alma del audio...
-⚙️ ➛ Convirtiendo a MP3 maldito...
-👻 ➛ Fantasma espera con dulces...
+⚙️ ➛ Convirtiendo a MP3 con brillo...
+✨ ➛ Reina espera con dulces...
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`)
 
         const videoBuffer = await q.download()
@@ -96,55 +96,53 @@ const handler = async (m, { conn }) => {
         await conn.sendMessage(m.chat, {
             audio: audioBuffer,
             mimetype: 'audio/mpeg',
-            fileName: 'audio_extraido_halloween.mp3',
+            fileName: 'audio_extraido_cotti.mp3',
             ptt: false
         }, { quoted: m })
 
-        await react(conn, m, "🎃")
-        let menuOk = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+        await react(conn, m, "🎀")
+        let menuOk = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐀𝐃𝐎 ﹒ AUDIVD ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`RESULTADO\`\` 🎃 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`RESULTADO\`\` 🎀 —˙𖦹.꒷
 
-── *📊 RESULTADO* ╏ 🎃
-✅ ➛ Audio exorcizado correctamente
+── *📊 RESULTADO* ╏ 💅
+✅ ➛ Audio exorcizado correctamente, reina
 📌 ➛ Formato: *MP3 192kbps*
 📌 ➛ Calidad: *44.1kHz Stereo*
-👻 ➛ Fantasma aprueba este audio
 
-── *📥 DESCARGA* ╏ 🦇
+── *📥 DESCARGA* ╏ 👑
 ⬇️ ➛ Archivo enviado arriba
-🍬 ➛ Listo para escuchar en noche de brujas
+✨ ➛ Listo para escuchar, reina
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
         return conn.sendMessage(m.chat, { text: menuOk }, { quoted: m })
 
     } catch (e) {
         console.error(e)
-        await react(conn, m, "💀")
-        const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
-        let menuErr = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+        await react(conn, m, "💔")
+        const fecha2 = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
+        let menuErr = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ AUDIVD ：✿ 。
-꒰ ◞⁺⊹ ．${fecha}
+꒰ ◞⁺⊹ ．${fecha2}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💀 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💔 —˙𖦹.꒷
 
-── *📝 DESCRIPCIÓN* ╏ 🎃
+── *📝 DESCRIPCIÓN* ╏ 💅
 ❌ ➛ ${e.message}
-💀 ➛ El fantasma se asustó
 
 ── *💡 SOLUCIÓN* ╏ 🕯️
-🔧 ➛ Usa un video válido
+🔧 ➛ Usa un video válido, reina
 🔧 ➛ Máx 2 minutos recomendado
-🎃 ➛ Intenta con menos peso que una calabaza
+🎀 ➛ Intenta con menos peso
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
         return conn.sendMessage(m.chat, { text: menuErr }, { quoted: m })
     } finally {
@@ -154,7 +152,7 @@ const handler = async (m, { conn }) => {
 }
 
 handler.help = ['audivd']
-handler.tags = ['tools', 'halloween']
+handler.tags = ['tools']
 handler.command = ['audivd', 'audio']
 handler.limit = true
 export default handler
