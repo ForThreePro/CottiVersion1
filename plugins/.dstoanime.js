@@ -38,25 +38,25 @@ let handler = async (m, { conn, text, command }) => {
   let mime = (q.msg || q).mimetype || ''
 
   if (!/image/.test(mime) &&!link) {
-    return conn.sendMessage(m.chat, { text: `‧˚꒰🎃୭ *_𝐋𝐔𝐗 𝐗 𝐘𝐀𝐋𝐋𝐈𝐂𝐎 - 𝐇𝐀𝐋𝐋𝐎𝐖𝐄𝐄𝐍_*\n\n꒰👻꒱ Responde a una foto para convertirla en anime embrujado\n\n꒰🦇୭.${command}` }, { quoted: m })
+    return conn.sendMessage(m.chat, { text: `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n⤷ ┇ 𝐒𝐈𝐒𝐓𝐄𝐌𝐀 ﹒ 𝐇𝐀𝐋𝐋𝐎𝐖𝐄𝐄𝐍 ：✿ 。\n\n ꒱ ׁ. ᘏ 𝗖𝗢𝗠𝗔𝗡𝗗𝗢 ׅ 𝆬 ָ֢ ෆ\n🎀 ࣪ ꕀ.${command} ˚. ᵎᵎ\n\n── *📝 DESCRIPCIÓN* ╏ 💅\n💄 ➛ Responde a una foto para convertirla en anime embrujado ✨\n\n> "Hazlo cute, reina" 🎀👻` }, { quoted: m })
   }
 
   try {
-    await conn.sendMessage(m.chat, { react: { text: '🎃', key: m.key } })
+    await conn.sendMessage(m.chat, { react: { text: '🎀', key: m.key } })
 
     if (/image/.test(mime) &&!link) {
       let media = await q.download()
       link = await myCloud(media)
     }
 
-    await conn.sendMessage(m.chat, { text: `‧˚꒰🎃୭ *_𝐋𝐔𝐗 𝐗 𝐘𝐀𝐋𝐋𝐈𝐂𝐎_*\n\n꒰🕸️꒱ Convirtiendo a anime Halloween...` }, { quoted: m })
+    await conn.sendMessage(m.chat, { text: `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n꒰🕸️꒱ Convirtiendo a anime Halloween, preciosa... ✨` }, { quoted: m })
 
     const buf = await faaBuffer(`https://api-faa.my.id/faa/toanime?url=${encodeURIComponent(link)}`)
 
-    await conn.sendMessage(m.chat, { image: buf, caption: `‧˚꒰🎃୭ *_𝐋𝐔𝐗 𝐗 𝐘𝐀𝐋𝐋𝐈𝐂𝐎_*\n\n꒰👻꒱ Anime Halloween listo\n‧˚꒰🦇୭ ${(buf.length/1024).toFixed(0)} KB` }, { quoted: m })
+    await conn.sendMessage(m.chat, { image: buf, caption: `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n⤷ ┇ 𝐒𝐈𝐒𝐓𝐄𝐌𝐀 ﹒ 𝐇𝐀𝐋𝐋𝐎𝐖𝐄𝐄𝐍 ：✿ 。\n\n.⃟𖥔 ݁. 𖦹˙— \`\`ANIME HALLOWEEN\`\` 🎀 —˙𖦹.꒷\n\n── *📊 RESULTADO* ╏ 🕯️\n✅ ➛ Anime listo, reina 💖\n💅 ➛ Tamaño: *${(buf.length/1024).toFixed(0)} KB*\n\n━━━━━━━━━━━\n🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃` }, { quoted: m })
 
   } catch (e) {
-    return conn.sendMessage(m.chat, { text: `‧˚꒰🎃୭ *_𝐋𝐔𝐗 𝐗 𝐘𝐀𝐋𝐋𝐈𝐂𝐎_*\n\n꒰💀꒱ Error: ${e.message}` }, { quoted: m })
+    return conn.sendMessage(m.chat, { text: `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n💀 ➛ Error: ${e.message} 💅` }, { quoted: m })
   }
 }
 
