@@ -6,12 +6,12 @@ let handler = async (m, { conn, args, isOwner }) => {
 
   if (/on/i.test(args[0])) {
     bot.antiSpam = true
-    await conn.reply(m.chat, "✅ *Anti-Spam activado.*\n_(Solo filtra Stickers y Emojis)_", m)
+    await conn.reply(m.chat, "‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n✅ *Anti-Spam activado, reina.*\n✨ _(Solo filtra Stickers y Emojis)_", m)
   } else if (/off/i.test(args[0])) {
     bot.antiSpam = false
-    await conn.reply(m.chat, "❌ *Anti-Spam desactivado.*", m)
+    await conn.reply(m.chat, "‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n❌ *Anti-Spam desactivado.*", m)
   } else {
-    await conn.reply(m.chat, `📌 Uso: *.antispam on/off*`, m)
+    await conn.reply(m.chat, `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n📌 Uso: *.antispam on/off* 🎀`, m)
   }
 }
 
@@ -27,19 +27,19 @@ handler.before = async function (m, { conn, isAdmin, isBotAdmin, isOwner, isROwn
 
   const sender = m.sender
   const currentTime = Date.now()
-  const timeWindow = 6000 
-  const warnLimit = 4 
-  const kickLimit = 6 
+  const timeWindow = 6000
+  const warnLimit = 4
+  const kickLimit = 6
 
-  const isEmojiOnly = m.text ? /^(?:\p{Emoji_Presentation}|\p{Emoji}\uFE0F|\p{Emoji_Modifier_Base}|\p{Emoji_Modifier}|\p{Emoji_Component})+$/u.test(m.text.trim()) : false
+  const isEmojiOnly = m.text? /^(?:\p{Emoji_Presentation}|\p{Emoji}\uFE0F|\p{Emoji_Modifier_Base}|\p{Emoji_Modifier}|\p{Emoji_Component})+$/u.test(m.text.trim()) : false
   const isSticker = m.mtype === 'stickerMessage'
 
-  if (!isSticker && !isEmojiOnly) return 
+  if (!isSticker &&!isEmojiOnly) return
 
   if (!userSpamData[sender] || (currentTime - userSpamData[sender].startTime > timeWindow)) {
-    userSpamData[sender] = { 
-      startTime: currentTime, 
-      messageCount: 1 
+    userSpamData[sender] = {
+      startTime: currentTime,
+      messageCount: 1
     }
   } else {
     userSpamData[sender].messageCount++
@@ -49,18 +49,18 @@ handler.before = async function (m, { conn, isAdmin, isBotAdmin, isOwner, isROwn
 
   if (isOwner || isROwner) {
     if (count === warnLimit) {
-      await conn.reply(m.chat, `Hey creador, tranquilo... 🌀 No satures con tanto sticker/emoji.`, m)
+      await conn.reply(m.chat, `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\nHey creadora, tranquila... ✨ No satures con tanto sticker/emoji, reina.`, m)
     }
-    return 
+    return
   }
 
-  if (m.isGroup && (isAdmin || isPrems || !isBotAdmin)) return  
+  if (m.isGroup && (isAdmin || isPrems ||!isBotAdmin)) return
 
   if (count === warnLimit) {
-    await conn.reply(m.chat, `᥀·࣭࣪̇˖⚔️◗ *@${sender.split('@')[0]}*, ¡Corta el spam de stickers/emojis! (${count}/${kickLimit})`, m, { mentions: [sender] })
-  } 
+    await conn.reply(m.chat, `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n⤷ ┇ 𝐀𝐍𝐓𝐈𝐒𝐏𝐀𝐌 ﹒ 𝐖𝐀𝐑𝐍 ：✿ 。\n\n💅 @${sender.split('@')[0]}, ¡Corta el spam de stickers/emojis, reina! (${count}/${kickLimit}) 🎀`, m, { mentions: [sender] })
+  }
   else if (count >= kickLimit) {
-    await conn.reply(m.chat, `᥀·࣭࣪̇˖👺◗ *@${sender.split('@')[0]}* fue eliminado por flood de stickers/emojis.`, m, { mentions: [sender] })
+    await conn.reply(m.chat, `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n⤷ ┇ 𝐀𝐍𝐓𝐈𝐒𝐏𝐀𝐌 ﹒ 𝐁𝐀𝐍 ：✿ 。\n\n💀 @${sender.split('@')[0]} fue exorcizada por flood de stickers/emojis, reina. 🎀`, m, { mentions: [sender] })
     if (m.isGroup) {
       await conn.groupParticipantsUpdate(m.chat, [sender], 'remove')
     }
