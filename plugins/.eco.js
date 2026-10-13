@@ -22,23 +22,23 @@ let handler = async (m, { conn, usedPrefix, text, command }) => {
       name = who.split('@')[0]
     }
 
-    let texto = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
-⤷ ┇ 𝐁𝐀𝐍𝐂𝐎 ﹒ 𝐒𝐀𝐋𝐃𝐎 ：✿ 。
+    let texto = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
+⤷ ┇ 𝐁𝐀𝐍𝐂𝐎 ﹒ 𝐇𝐀𝐋𝐋𝐎𝐖𝐄𝐄𝐍 ：✿ 。
+꒰ ◞⁺⊹ ．𝐒𝐀𝐋𝐃𝐎 𝐃𝐄 @${who.split('@')[0]}
 
-🍝 *SALDO DE @${who.split('@')[0]}* 🍕
-> *"Contando monedas como Garfield cuenta lasañas"*
+.⃟𖥔 ݁. 𖦹˙— \`\`BILLETERA\`\` 🎀 —˙𖦹.꒷
 
-── *📊 BILLETERA* ╏ 😼
+── *📊 BILLETERA* ╏ 💅
 🪙 ➛ Billetera: *${userTarget.coin} monedas*
 🏦 ➛ Banco: *${userTarget.bank} monedas*
 💵 ➛ Total: *${userTarget.coin + userTarget.bank} monedas*
-🚔 ➛ Deuda Policía: *${userTarget.deuda} monedas*
+🚔 ➛ Deuda: *${userTarget.deuda} monedas*
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼`
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃`
 
     if (userTarget.deuda > 0) {
-      texto += `\n\n⚠️ *¡GARFIELD DEBE LASAÑA!* ⚠️\n😴 Debe trabajar para pagar, Odio los lunes con deuda`
+      texto += `\n\n⚠️ *¡Deuda pendiente, reina!* 💅\n💀 Paga para quedar limpia ✨`
     }
 
     if (who!== m.sender) {
@@ -57,24 +57,24 @@ let handler = async (m, { conn, usedPrefix, text, command }) => {
   if (command === 'dall') {
     user.coin = Number(user.coin) || 0
     user.deuda = Number(user.deuda) || 0
-    if (user.deuda > 0) return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🚔 Tienes una *deuda de ${user.deuda} 🪙*\n😴 Garfield no presta con deuda\n\nUsa ${usedPrefix}pagardeuda <monto>`)
-    if (user.coin === 0) return m.reply('😼 No tienes monedas en la billetera... ¡Ni para una lasaña! 🍝')
+    if (user.deuda > 0) return m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n🚔 Tienes una *deuda de ${user.deuda} 🪙*\n💅 No puedes depositar con deuda, reina\n\nUsa ${usedPrefix}pagardeuda <monto>`)
+    if (user.coin === 0) return m.reply('‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n💸 No tienes monedas en la billetera, preciosa 💅')
     let cantidad = user.coin
     user.coin = 0
     user.bank = (Number(user.bank) || 0) + cantidad
-    return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🏦 Depositaste *${cantidad} monedas* al banco\n🍝 Garfield guarda para más lasaña\n\nBilletera: ${user.coin} 🪙\nBanco: ${user.bank} 🏦`)
+    return m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n🏦 Depositaste *${cantidad} monedas* al banco ✨\n\nBilletera: ${user.coin} 🪙\nBanco: ${user.bank} 🏦`)
   }
 
   // RETIRAR TODO
   if (command === 'rall') {
     user.bank = Number(user.bank) || 0
     user.deuda = Number(user.deuda) || 0
-    if (user.deuda > 0) return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🚔 Deuda de ${user.deuda} 🪙\nUsa ${usedPrefix}pagardeuda <monto>`)
-    if (user.bank === 0) return m.reply('😼 Banco vacío... ¡Garfield se comió todo! 🍕')
+    if (user.deuda > 0) return m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n🚔 Deuda de ${user.deuda} 🪙\nUsa ${usedPrefix}pagardeuda <monto>`)
+    if (user.bank === 0) return m.reply('‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n🏦 Banco vacío, reina 💅')
     let cantidad = user.bank
     user.bank = 0
     user.coin = (Number(user.coin) || 0) + cantidad
-    return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🏦 Retiraste *${cantidad} monedas*\n😸 Garfield feliz con su dinero\n\nBilletera: ${user.coin} 🪙\nBanco: ${user.bank} 🏦`)
+    return m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n🏦 Retiraste *${cantidad} monedas* ✨\n\nBilletera: ${user.coin} 🪙\nBanco: ${user.bank} 🏦`)
   }
 
   // DEPOSITAR MONTO
@@ -82,12 +82,12 @@ let handler = async (m, { conn, usedPrefix, text, command }) => {
     let monto = parseInt(text)
     user.coin = Number(user.coin) || 0
     user.deuda = Number(user.deuda) || 0
-    if (user.deuda > 0) return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🚔 Deuda de ${user.deuda} 🪙\nUsa ${usedPrefix}pagardeuda <monto>`)
-    if (isNaN(monto) || monto < 1) return m.reply(`😼 Uso: ${usedPrefix}d <monto> 🍝`)
-    if (user.coin < monto) return m.reply(`😼 No tienes suficiente. Billetera: ${user.coin} 🪙\n🍕 Garfield te mira con hambre`)
+    if (user.deuda > 0) return m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n🚔 Deuda de ${user.deuda} 🪙\nUsa ${usedPrefix}pagardeuda <monto>`)
+    if (isNaN(monto) || monto < 1) return m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n💅 Uso: ${usedPrefix}d <monto> 🎀`)
+    if (user.coin < monto) return m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n💸 No tienes suficiente. Billetera: ${user.coin} 🪙`)
     user.coin -= monto
     user.bank = (Number(user.bank) || 0) + monto
-    return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🏦 Depositaste *${monto} monedas*\n\nBilletera: ${user.coin} 🪙\nBanco: ${user.bank} 🏦`)
+    return m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n🏦 Depositaste *${monto} monedas* ✨\n\nBilletera: ${user.coin} 🪙\nBanco: ${user.bank} 🏦`)
   }
 
   // RETIRAR MONTO
@@ -95,33 +95,33 @@ let handler = async (m, { conn, usedPrefix, text, command }) => {
     let monto = parseInt(text)
     user.bank = Number(user.bank) || 0
     user.deuda = Number(user.deuda) || 0
-    if (user.deuda > 0) return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🚔 Deuda de ${user.deuda} 🪙\nUsa ${usedPrefix}pagardeuda <monto>`)
-    if (isNaN(monto) || monto < 1) return m.reply(`😼 Uso: ${usedPrefix}r <monto> 🍝`)
-    if (user.bank < monto) return m.reply(`😼 Banco: ${user.bank} 🏦\n🍕 No alcanza ni para una porción`)
+    if (user.deuda > 0) return m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n🚔 Deuda de ${user.deuda} 🪙\nUsa ${usedPrefix}pagardeuda <monto>`)
+    if (isNaN(monto) || monto < 1) return m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n💅 Uso: ${usedPrefix}r <monto> 🎀`)
+    if (user.bank < monto) return m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n🏦 Banco: ${user.bank} 🏦\n💸 No alcanza, reina`)
     user.bank -= monto
     user.coin = (Number(user.coin) || 0) + monto
-    return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🏦 Retiraste *${monto} monedas*\n\nBilletera: ${user.coin} 🪙\nBanco: ${user.bank} 🏦`)
+    return m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n🏦 Retiraste *${monto} monedas* ✨\n\nBilletera: ${user.coin} 🪙\nBanco: ${user.bank} 🏦`)
   }
 
   // PAY
   if (['pay', 'pagar'].includes(command)) {
     let args = text.split(' ')
-    if (args.length < 2) return m.reply(`😼 Uso: ${usedPrefix + command} <monto> @user 🍕`)
+    if (args.length < 2) return m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n💅 Uso: ${usedPrefix + command} <monto> @user 🎀`)
     let monto = parseInt(args[0])
     user.coin = Number(user.coin) || 0
     user.deuda = Number(user.deuda) || 0
-    if (user.deuda > 0) return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🚔 Deuda de ${user.deuda} 🪙\nUsa ${usedPrefix}pagardeuda <monto>`)
-    if (isNaN(monto) || monto < 1) return m.reply('😼 Monto inválido, ni Odie pagaría eso 🐶')
-    if (user.coin < monto) return m.reply(`😼 Saldo: ${user.coin} 🪙\n🍝 No alcanza, Garfield decepcionado`)
+    if (user.deuda > 0) return m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n🚔 Deuda de ${user.deuda} 🪙\nUsa ${usedPrefix}pagardeuda <monto>`)
+    if (isNaN(monto) || monto < 1) return m.reply('‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n💸 Monto inválido, reina 💅')
+    if (user.coin < monto) return m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n💸 Saldo: ${user.coin} 🪙\n✨ No alcanza, preciosa`)
     let who = m.mentionedJid[0]
-    if (!who) return m.reply('😼 Menciona a quien le quieres pagar su lasaña 🍝')
+    if (!who) return m.reply('‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n💅 Menciona a quien quieres pagarle 🎀')
     who = who.replace(/@lid$/, '@s.whatsapp.net')
-    if (who === m.sender) return m.reply('😼 No te puedes pagar a ti mismo, egoísta como Garfield 🍕')
+    if (who === m.sender) return m.reply('‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n💅 No te puedes pagar a ti misma, reina')
     if (!global.db.data.users[who]) global.db.data.users[who] = { coin: 0, bank: 0, deuda: 0 }
     global.db.data.users[who].coin = Number(global.db.data.users[who].coin) || 0
     user.coin -= monto
     global.db.data.users[who].coin += monto
-    return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n💸 *TRANSFERENCIA GARFIELD* 💸\n🍝 Le pagaste *${monto} monedas* a @${who.split('@')[0]}\n😸 Compartiendo lasaña como buen gato\n\nTu saldo: ${user.coin} 🪙`, null, { mentions: [who, m.sender] })
+    return m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n💸 *TRANSFERENCIA HALLOWEEN* 🎀\n✨ Le pagaste *${monto} monedas* a @${who.split('@')[0]}\n\nTu saldo: ${user.coin} 🪙`, null, { mentions: [who, m.sender] })
   }
 
   // LEADERBOARD
@@ -133,20 +133,20 @@ let handler = async (m, { conn, usedPrefix, text, command }) => {
       deuda: Number(value.deuda) || 0
     })).filter(v => v.coin || v.bank)
 
-    if (users.length === 0) return m.reply('😼 No hay usuarios con monedas... ¡Todos se gastaron en lasaña! 🍕')
+    if (users.length === 0) return m.reply('‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n💸 No hay usuarios con monedas, reina 💅')
     users.sort((a, b) => (b.coin + b.bank) - (a.coin + a.bank))
-    let texto = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n⤷ ┇ 𝐓𝐎𝐏 𝐌𝐈𝐋𝐋𝐎𝐍𝐀𝐑𝐈𝐎𝐒 🍝\n\n🏆 *TOP 10 MILLONARIOS - GARFIELD EDITION* 🏆\n> *"Los que tienen más lasaña"*\n\n`
+    let texto = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n⤷ ┇ 𝐓𝐎𝐏 𝐌𝐈𝐋𝐋𝐎𝐍𝐀𝐑𝐈𝐎𝐒 ﹒ 𝐇𝐀𝐋𝐋𝐎𝐖𝐄𝐄𝐍 ：✿ 。\n\n🏆 *TOP 10 MILLONARIAS* 🏆 🎀\n\n`
     let len = Math.min(10, users.length)
     for (let i = 0; i < len; i++) {
       let user = users[i]
       let total = user.coin + user.bank
       let medalla = i === 0? '🥇' : i === 1? '🥈' : i === 2? '🥉' : `${i + 1}.`
-      texto += `${medalla} @${user.jid.split('@')[0]}\n🍕 Total: ${total} 🍝`
+      texto += `${medalla} @${user.jid.split('@')[0]}\n💅 Total: ${total} ✨`
       if (user.deuda > 0) texto += ` 🚔 Deuda: ${user.deuda}`
       texto += `\n\n`
     }
     let posicion = users.findIndex(v => v.jid === m.sender) + 1
-    if (posicion > 0) texto += `📍 Tu posición: #${posicion} 😼\n🍕 *LUX X YALLICO - GARFIELD EDITION*`
+    if (posicion > 0) texto += `📍 Tu posición: #${posicion} 🎀\n━━━━━━━━━━━\n🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃`
     return conn.reply(m.chat, texto, m, { mentions: users.slice(0, len).map(v => v.jid) })
   }
 }
