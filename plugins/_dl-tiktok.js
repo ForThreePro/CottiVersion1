@@ -9,39 +9,39 @@ const react = async (conn, m, text) => {
 
 var handler = async (m, { conn, args }) => {
   const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
-  const ownerNum = global.owner?.[0]?.[0] || '51927174369'
+  const ownerNum = global.owner?.[0]?.[0] || '56931300864'
 
   if (!args[0]) {
-    let menuUso = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+    let menuUso = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀𝐒 ﹒ TIKTOK ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
   ꒱ ׁ. ᘏ 𝗖𝗢𝗠𝗔𝗡𝗗𝗢 ׅ 𝆬 ָ֢ ෆ
 📱 ࣪ ꕀ.tiktok ˚. ᵎᵎ
-> *"Bajando videos como fantasma roba dulces"*
+> *"Bajando videos con brillo de reina"*
 
 .⃟𖥔 ݁. 𖦹˙— \`\`DESCARGAS\`\` 📥 —˙𖦹.꒷
 
-── *📝 DESCRIPCIÓN* ╏ 🎃
-📱 ➛ Descarga videos de TikTok sin marca de agua
-📱 ➛ Con botones interactivos
-👻 ➛ Fantasma viendo TikTok en Halloween
+── *📝 DESCRIPCIÓN* ╏ 🎀
+✨ ➛ Descarga videos de TikTok sin marca de agua
+💅 ➛ Con botones interactivos
+👑 ➛ Reina viendo TikTok coquette
 
-── *📖 USO* ╏ 🦇
-➛.*tiktok* <link de tiktok>
-➛.*tt* <link de tiktok>
+── *📖 USO* ╏ 🎀
+➛.tiktok <link de tiktok>
+➛.tt <link de tiktok>
 
 ── *💡 EJEMPLO* ╏ 🕯️
 ➛ https://vm.tiktok.com/ZMkcmTCa6/
 
-── *🔗 SOPORTE* ╏ 🎃
-📱 ➛ vm.tiktok.com
-📱 ➛ vt.tiktok.com
-📱 ➛ www.tiktok.com
+── *🔗 SOPORTE* ╏ 🎀
+✨ ➛ vm.tiktok.com
+✨ ➛ vt.tiktok.com
+✨ ➛ www.tiktok.com
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 *Owner*: @${ownerNum}
 ━━━━━━━━━━━`
     return conn.sendMessage(m.chat, { text: menuUso, mentions: [ownerNum + '@s.whatsapp.net'] }, { quoted: m })
@@ -49,44 +49,44 @@ var handler = async (m, { conn, args }) => {
 
   const url = args[0]
   if (!url.match(/(https?:\/\/)?(www\.)?(vm\.|vt\.|www\.)?tiktok\.com\//)) {
-    await react(conn, m, '💀')
-    let menuError = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+    await react(conn, m, '💔')
+    let menuError = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ TIKTOK ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💀 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💔 —˙𖦹.꒷
 
-── *📝 DESCRIPCIÓN* ╏ 🎃
-❌ ➛ El enlace no es válido
-👻 ➛ Fantasma: "Eso no es TikTok, es trampa"
+── *📝 DESCRIPCIÓN* ╏ 💅
+❌ ➛ El enlace no es válido, reina
+✨ ➛ Eso no es TikTok
 
-── *📖 USO* ╏ 🦇
+── *📖 USO* ╏ 🎀
 ➛ Solo links de: *tiktok.com*
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
     return conn.sendMessage(m.chat, { text: menuError }, { quoted: m })
   }
 
   try {
-    await react(conn, m, "🎃")
-    await m.reply(`‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+    await react(conn, m, "🎀")
+    await m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐏𝐑𝐎𝐂𝐄𝐒𝐀𝐍𝐃𝐎 ﹒ TIKTOK ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`PROCESANDO\`\` ⚙️ —˙𖦹.꒷
 
-── *📊 ESTADO* ╏ 🎃
-🔍 ➛ Analizando link embrujado...
-📥 ➛ Obteniendo video HD maldito...
+── *📊 ESTADO* ╏ 💅
+🔍 ➛ Analizando link coquette...
+📥 ➛ Obteniendo video HD con brillo...
 ⬇️ ➛ Preparando descarga sin marca...
-👻 ➛ Fantasma buscando el botón...
+✨ ➛ Reina buscando el botón...
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`)
 
     const tiktokData = await tiktokdl(url)
@@ -102,7 +102,7 @@ var handler = async (m, { conn, args }) => {
       key: { remoteJid: m.chat, participant: '0@s.whatsapp.net', fromMe: false },
       message: {
         locationMessage: {
-          name: `🎃 LUX X YALLICO - HALLOWEEN EDITION 🦇`,
+          name: `🎀 COTTI BOT - HALLOWEEN EDITION 🎃`,
           jpegThumbnail: Buffer.from(await (await fetch('https://files.catbox.moe/dsgmid.jpg')).arrayBuffer())
         }
       }
@@ -115,25 +115,25 @@ var handler = async (m, { conn, args }) => {
         message: {
           interactiveMessage: proto.Message.InteractiveMessage.fromObject({
             body: {
-              text: `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+              text: `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐀𝐃𝐎 ﹒ TIKTOK ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`RESULTADO\`\` 📥 —˙𖦹.꒷
 
-── *📊 INFORMACIÓN* ╏ 🎃
+── *📊 INFORMACIÓN* ╏ 💅
 📌 ➛ Título: *${title}*
 👤 ➛ Autor: *@${author}*
 ❤️ ➛ Likes: *${likes}*
 💬 ➛ Comentarios: *${comments}*
-👻 ➛ Fantasma le dio like
+✨ ➛ La reina le dio like
 
-── *📥 DESCARGA* ╏ 🦇
+── *📥 DESCARGA* ╏ 👑
 ⬇️ ➛ Video sin marca de agua
-🍬 ➛ Listo para ver en noche de brujas`
+🎀 ➛ Listo para ver, reina`
             },
-            footer: { text: 'Sin marca de agua ✨ | LUX X YALLICO - HALLOWEEN EDITION 🎃' },
+            footer: { text: 'Sin marca de agua ✨ | COTTI BOT - HALLOWEEN EDITION 🎀' },
             header: { hasMediaAttachment: true, videoMessage: media.videoMessage },
             nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
               buttons: [
@@ -147,29 +147,28 @@ var handler = async (m, { conn, args }) => {
     }, { quoted: businessHeader })
 
     await conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id })
-    await react(conn, m, "🎃")
+    await react(conn, m, "🎀")
 
   } catch (error) {
-    await react(conn, m, "💀")
-    const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
-    let menuErr = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+    await react(conn, m, "💔")
+    const fecha2 = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
+    let menuErr = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ TIKTOK ：✿ 。
-꒰ ◞⁺⊹ ．${fecha}
+꒰ ◞⁺⊹ ．${fecha2}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💀 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💔 —˙𖦹.꒷
 
-── *📝 DESCRIPCIÓN* ╏ 🎃
+── *📝 DESCRIPCIÓN* ╏ 💅
 ❌ ➛ ${error.message}
-💀 ➛ El fantasma se asustó
 
 ── *💡 SOLUCIÓN* ╏ 🕯️
-🔧 ➛ Verifica que el video sea público
+🔧 ➛ Verifica que el video sea público, reina
 🔧 ➛ Intenta con otro link
-🎃 ➛ Fantasma dice: prueba otra vez
+🎀 ➛ Prueba otra vez
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
     return conn.sendMessage(m.chat, { text: menuErr }, { quoted: m })
   }
