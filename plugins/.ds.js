@@ -1,4 +1,3 @@
-
 import { existsSync, promises as fs } from 'fs'
 import path from 'path'
 import moment from 'moment-timezone'
@@ -15,7 +14,7 @@ var handler = async (m, { conn }) => {
     if (!sessionPath) return m.reply('🧐 *No encontré la carpeta de sesión*')
 
     await conn.sendMessage(m.chat, { react: { text: '🎃', key: m.key } })
-    await m.reply(`‧˚꒰🎃୭ *_𝐋𝐔𝐗 𝐗 𝐘𝐀𝐋𝐋𝐈𝐂𝐎 - 𝐇𝐀𝐋𝐋𝐎𝐖𝐄𝐄𝐍_*\n\n꒰👻꒱ Garfield con disfraz de fantasma limpiando... 🕸️`)
+    await m.reply(`‧˚꒰🎃୭ *_𝐂𝐎𝐓𝐓𝐈 𝐁𝐎𝐓 - 𝐇𝐀𝐋𝐋𝐎𝐖𝐄𝐄𝐍_*\n\n꒰👻꒱ Garfield con disfraz de fantasma limpiando... 🕸️`)
 
     let files = await fs.readdir(sessionPath)
     let filesDeleted = 0
@@ -36,7 +35,7 @@ var handler = async (m, { conn }) => {
     const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
     const ownerNum = global.owner?.[0]?.[0] || '51927174369'
 
-    let menu = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗜𝗖𝗢 𓆪 🦇
+    let menu = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗜 𝗕𝗢𝗧 𓆪 🦇
 
 ⤷ ┇ 𝐒𝐈𝐒𝐓𝐄𝐌𝐀 ﹒ 𝐇𝐀𝐋𝐋𝐎𝐖𝐄𝐄𝐍 𝐅𝐈𝐗 ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
@@ -61,7 +60,7 @@ var handler = async (m, { conn }) => {
 💀 ➛ Estado: *${filesDeleted === 0? 'Todo limpio - Sin fantasmas 😸' : 'Exorcismo completado - Hora de pedir dulces 🎃'}*
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎃 *COTTI BOT - HALLOWEEN EDITION* 🦇
 *Owner*: @${ownerNum}
 *Version*: 2.6 HALLOWEEN PRO
 
@@ -74,7 +73,7 @@ var handler = async (m, { conn }) => {
     }, { quoted: m })
 }
 handler.help = ['dsowner']
-handler.tags = ['fix', 'owner']
+handler.tags = ['fix']
 handler.command = ['dsowner','delai','clearcache']
 handler.rowner = true
 export default handler
