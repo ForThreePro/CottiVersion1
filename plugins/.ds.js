@@ -14,7 +14,7 @@ var handler = async (m, { conn }) => {
     if (!sessionPath) return m.reply('🧐 *No encontré la carpeta de sesión*')
 
     await conn.sendMessage(m.chat, { react: { text: '🎃', key: m.key } })
-    await m.reply(`‧˚꒰🎃୭ *_𝐂𝐎𝐓𝐓𝐈 𝐁𝐎𝐓 - 𝐇𝐀𝐋𝐋𝐎𝐖𝐄𝐄𝐍_*\n\n꒰👻꒱ Garfield con disfraz de fantasma limpiando... 🕸️`)
+    await m.reply(`‧˚꒰🎃୭ *_𝐂𝐎𝐓𝐓𝐈 𝐁𝐎𝐓 - 𝐇𝐀𝐋𝐋𝐎𝐖𝐄𝐄𝐍_*\n\n꒰👻꒱ Iniciando limpieza maldita... 🕸️`)
 
     let files = await fs.readdir(sessionPath)
     let filesDeleted = 0
@@ -35,21 +35,21 @@ var handler = async (m, { conn }) => {
     const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
     const ownerNum = global.owner?.[0]?.[0] || '51927174369'
 
-    let menu = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗜 𝗕𝗢𝗧 𓆪 🦇
+    let menu = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🦇
 
 ⤷ ┇ 𝐒𝐈𝐒𝐓𝐄𝐌𝐀 ﹒ 𝐇𝐀𝐋𝐋𝐎𝐖𝐄𝐄𝐍 𝐅𝐈𝐗 ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
   ꒱ ׁ. ᘏ 𝗖𝗢𝗠𝗔𝗡𝗗𝗢 ׅ 𝆬 ָ֢ ෆ
 🎃 ࣪ ꕀ.dsowner ˚. ᵎᵎ
-> *"Limpiando hasta el último fantasma de la sesión"*
+> *"Exorcizando la sesión..."*
 
 .⃟𖥔 ݁. 𖦹˙— \`\`FIX DE SESIÓN HALLOWEEN\`\` [${filesDeleted}] 🕸️ —˙𖦹.꒷
 
 ── *📝 DESCRIPCIÓN* ╏ 🎃
-🧹 ➛ Elimina archivos de caché basura embrujados
+🧹 ➛ Elimina archivos de caché basura malditos
 🔒 ➛ No borra \`creds\` ni \`app-state\` para que no se desconecte
-👻 ➛ Garfield disfrazado: *"Más rápido, que hay dulces esperando"* 🍬
+🕸️ ➛ Limpieza profunda de la cripta
 
 ── *📖 USO* ╏ 🦇
 👑 ➛ Usar solo en el número principal del bot
@@ -57,14 +57,12 @@ var handler = async (m, { conn }) => {
 
 ── *📊 RESULTADO* ╏ 🕯️
 ✅ ➛ Archivos eliminados: *${filesDeleted}*
-💀 ➛ Estado: *${filesDeleted === 0? 'Todo limpio - Sin fantasmas 😸' : 'Exorcismo completado - Hora de pedir dulces 🎃'}*
+💀 ➛ Estado: *${filesDeleted === 0? 'Cripta limpia - Sin espíritus 👻' : 'Exorcismo completado 🎃'}*
 
 ━━━━━━━━━━━
 🎃 *COTTI BOT - HALLOWEEN EDITION* 🦇
 *Owner*: @${ownerNum}
 *Version*: 2.6 HALLOWEEN PRO
-
-> "Odio los lunes, pero amo una sesión sin fantasmas" 😼🎃
 ━━━━━━━━━━━`
 
     await conn.sendMessage(m.chat, {
