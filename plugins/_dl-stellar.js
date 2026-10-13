@@ -17,63 +17,63 @@ const getBuffer = async (url) => {
 
 let handler = async (m, { conn, command }) => {
     const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
-    const ownerNum = global.owner?.[0]?.[0] || '51927174369'
+    const ownerNum = global.owner?.[0]?.[0] || '56931300864'
     let text = m.text || m.message?.conversation || m.message?.extendedTextMessage?.text || ''
     text = text.replace(`.${command}`, '').trim()
 
     if (!text) {
-        return conn.sendMessage(m.chat, { text: `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+        return conn.sendMessage(m.chat, { text: `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀𝐒 ﹒ DESCARGAS ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
   ꒱ ׁ. ᘏ 𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 ׅ 𝆬 ָ֢ ෆ
 📥 ࣪ ꕀ.descargas ˚. ᵎᵎ
-> *"Descargando almas como dulces en Halloween"*
+> *"Descargando con brillo de reina"*
 
 .⃟𖥔 ݁. 𖦹˙— \`\`USO HALLOWEEN\`\` 📥 —˙𖦹.꒷
 
-── *📝 COMANDOS* ╏ 🎃
-1️⃣ ➛.*play1* <nombre de canción>
-   🎃 ➛ Descarga audio de YouTube MP3
-   👻 ➛ Fantasma pone la música
+── *📝 COMANDOS* ╏ 🎀
+1️⃣ ➛.play1 <nombre de canción>
+   🎀 ➛ Descarga audio de YouTube MP3
+   ✨ ➛ Reina pone la música
 
-2️⃣ ➛.*ttmp3* <link de tiktok>
+2️⃣ ➛.ttmp3 <link de tiktok>
    🎵 ➛ Descarga audio de TikTok MP3
-   🦇 ➛ TikTok sabor calabaza
+   💅 ➛ TikTok sabor coquette
 
-3️⃣ ➛.*fb* <link de facebook>
+3️⃣ ➛.fb <link de facebook>
    📹 ➛ Descarga video de Facebook
-   💀 ➛ Hasta el fantasma ve FB
+   👑 ➛ Hasta la reina ve FB
 
 ── *💡 EJEMPLOS* ╏ 🕯️
-➛.*play1* despacito
-➛.*ttmp3* https://tiktok.com/@user/video
-➛.*fb* https://facebook.com/watch?v=xxx
+➛.play1 despacito
+➛.ttmp3 https://tiktok.com/@user/video
+➛.fb https://facebook.com/watch?v=xxx
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 *Owner*: @${ownerNum}
 ━━━━━━━━━━━`, mentions: [ownerNum + '@s.whatsapp.net'] }, { quoted: m })
     }
 
-    await react(conn, m, '🎃')
+    await react(conn, m, '🎀')
     try {
         if (command === 'play1') {
-            await m.reply(`‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+            await m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀𝐍𝐃𝐎 ﹒ PLAY1 ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`YOUTUBE\`\` 🎃 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`YOUTUBE\`\` 🎀 —˙𖦹.꒷
 
-── *📊 ESTADO* ╏ 🎃
-🔍 ➛ Buscando canción embrujada...
+── *📊 ESTADO* ╏ 💅
+🔍 ➛ Buscando canción coquette...
 ⬇️ ➛ Descargando audio MP3...
-👻 ➛ Fantasma eligiendo tema...
+✨ ➛ Reina eligiendo tema...
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`)
             const searchResult = await ytsearch(text)
             if (!searchResult.videos.length) throw new Error("No se encontró la canción.")
@@ -85,7 +85,7 @@ let handler = async (m, { conn, command }) => {
             if (!dl) throw new Error('No se pudo descargar el audio de YT')
 
             const audioBuffer = await getBuffer(dl)
-            await react(conn, m, '🦇')
+            await react(conn, m, '✨')
             await conn.sendMessage(m.chat, {
                 audio: audioBuffer,
                 mimetype: 'audio/mpeg',
@@ -94,19 +94,19 @@ let handler = async (m, { conn, command }) => {
         }
 
         if (command === 'ttmp3') {
-            await m.reply(`‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+            await m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀𝐍𝐃𝐎 ﹒ TTMP3 ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`TIKTOK\`\` 🎃 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`TIKTOK\`\` 🎀 —˙𖦹.꒷
 
-── *📊 ESTADO* ╏ 🎃
+── *📊 ESTADO* ╏ 💅
 ⬇️ ➛ Descargando audio de TikTok...
-🦇 ➛ Robando audio como dulces...
+✨ ➛ Robando audio con brillo...
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`)
             const apiUrl = `${api.url}/dl/tiktokmp3?url=${encodeURIComponent(text)}&key=${api.key}`
             const res = await fetch(apiUrl).then(r => r.json())
@@ -116,7 +116,7 @@ let handler = async (m, { conn, command }) => {
             if (!dl) throw new Error('No se pudo descargar. Link mal o privado')
 
             const audioBuffer = await getBuffer(dl)
-            await react(conn, m, '🦇')
+            await react(conn, m, '✨')
             await conn.sendMessage(m.chat, {
                 audio: audioBuffer,
                 mimetype: 'audio/mpeg',
@@ -125,19 +125,19 @@ let handler = async (m, { conn, command }) => {
         }
 
         if (command === 'fb' || command === 'facebook') {
-            await m.reply(`‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+            await m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀𝐍𝐃𝐎 ﹒ FACEBOOK ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`FACEBOOK\`\` 📹 —˙𖦹.꒷
 
-── *📊 ESTADO* ╏ 🎃
+── *📊 ESTADO* ╏ 💅
 ⬇️ ➛ Descargando video de Facebook...
-👻 ➛ Fantasma: "Odio los lunes, no los videos"
+👑 ➛ Reina revisando el video
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`)
             const apiUrl = `${api.url}/dl/facebook?url=${encodeURIComponent(text)}&key=${api.key}`
             const res = await fetch(apiUrl)
@@ -152,49 +152,47 @@ let handler = async (m, { conn, command }) => {
                 videoBuffer = Buffer.from(await res.arrayBuffer())
             }
 
-            await react(conn, m, '🦇')
+            await react(conn, m, '✨')
             await conn.sendMessage(m.chat, {
                 video: videoBuffer,
-                caption: `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+                caption: `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐀𝐃𝐎 ﹒ FACEBOOK ：✿ 。
 
 .⃟𖥔 ݁. 𖦹˙— \`\`DESCARGADO\`\` ✅ —˙𖦹.꒷
 
-── *📊 RESULTADO* ╏ 🎃
-✅ ➛ Video exorcizado correctamente
+── *📊 RESULTADO* ╏ 🎀
+✅ ➛ Video exorcizado correctamente, reina
 📥 ➛ Disfrútalo
-👻 ➛ Fantasma lo aprueba
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
             }, { quoted: m })
         }
 
-        await react(conn, m, '🎃')
+        await react(conn, m, '🎀')
     } catch (e) {
-        await react(conn, m, '💀')
-        const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
+        await react(conn, m, '💔')
+        const fecha2 = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
         console.log("ERROR:", e)
-        return conn.sendMessage(m.chat, { text: `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+        return conn.sendMessage(m.chat, { text: `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ ${command.toUpperCase()} ：✿ 。
-꒰ ◞⁺⊹ ．${fecha}
+꒰ ◞⁺⊹ ．${fecha2}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💀 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💔 —˙𖦹.꒷
 
-── *📝 DESCRIPCIÓN* ╏ 🎃
+── *📝 DESCRIPCIÓN* ╏ 💅
 ❌ ➛ ${e.message}
-💀 ➛ El fantasma se quedó sin dulces
 
 ── *💡 SOLUCIÓN* ╏ 🕯️
-🔧 ➛ Verifica que el link sea válido
+🔧 ➛ Verifica que el link sea válido, reina
 🔧 ➛ Asegúrate que no sea privado
-🎃 ➛ Intenta de nuevo, como pedir dulces
+🎀 ➛ Intenta de nuevo
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━` }, { quoted: m })
     }
 }
