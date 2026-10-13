@@ -14,7 +14,7 @@ export async function before(m, { conn }) {
 
         const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
         let author = update.author || update.participants[0]
-        let catalogoImg = { url: 'https://files.evogb.win/KMrBYL.jpg' }
+        let catalogoImg = { url: 'https://files.evogb.win/0OmUpW.jpg' }
 
         for (let user of update.participants) {
           if (update.action === 'promote') {
@@ -76,7 +76,7 @@ export async function before(m, { conn }) {
 
           const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
           let author = update.author || 'Desconocido'
-          let catalogoImg = { url: 'https://files.evogb.win/KMrBYL.jpg' }
+          let catalogoImg = { url: 'https://files.evogb.win/0OmUpW.jpg' }
 
           if (update.subject) {
             let txt = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
