@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { tmpdir } from 'os'
-import { createCanvas, registerFont } from 'canvas'
+import { createCanvas } from 'canvas'
 import ffmpeg from 'fluent-ffmpeg'
 import moment from 'moment-timezone'
 moment.locale('es')
@@ -9,10 +9,25 @@ moment.locale('es')
 let handler = async (m, { conn, text, usedPrefix, command }) => {
   const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
   const react = async (t) => { try { await conn.sendMessage(m.chat, { react: { text: t, key: m.key } }) } catch {} }
-  const head = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇\n\n꒰ ◞⁺⊹ ．${fecha}\n`
+  const head = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
+
+⤷ ┇ 𝐒𝐓𝐈𝐂𝐊𝐄𝐑 ﹒ BRAT2 ：✿ 。
+꒰ ◞⁺⊹ ．${fecha}\n`
+  const footer = `\n━━━━━━━━━━━\n🎀 *COTTI BOT - HALLOWEEN* 🎃`
 
   let txt = text || m.quoted?.text || m.quoted?.caption || ''
-  if (!txt) return m.reply(head + `\n💀 Usa: *${usedPrefix}${command} Tu texto*`, m)
+  if (!txt) {
+    await react('💅')
+    return conn.sendMessage(m.chat, {
+      text: `${head}
+.⃟𖥔 ݁. 𖦹˙— \`\`FORMATO\`\` 💅 —˙𖦹.꒷
+
+── *📖 USO* ╏ 🎀
+💅 ➛ Usa: *${usedPrefix}${command} Tu texto*
+✨ ➛ Ejemplo: *${usedPrefix}brat2 coquette halloween*
+${footer}`
+    }, { quoted: m })
+  }
 
   // ===== CAMBIA LA FUENTE AQUÍ =====
   // 1 = Brat Classic Blur
@@ -29,10 +44,11 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     const canvas = createCanvas(size, size)
     const ctx = canvas.getContext('2d')
 
-    ctx.fillStyle = '#92D1D6'
+    // color coquette halloween
+    ctx.fillStyle = '#FFB6D9'
     ctx.fillRect(0, 0, size, size)
 
-    // ruido
+    // ruido coquette
     ctx.fillStyle = 'rgba(0,0,0,0.05)'
     for (let i = 0; i < 5000; i++) ctx.fillRect(Math.random()*size, Math.random()*size, 2, 2)
 
@@ -104,11 +120,18 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     await conn.sendMessage(m.chat, { sticker: fs.readFileSync(tmpWebp) }, { quoted: m })
     try { fs.unlinkSync(tmpPng); fs.unlinkSync(tmpWebp) } catch {}
-    await react('🎃')
+    await react('✨')
   } catch (e) {
     console.error(e)
-    await react('💀')
-    await m.reply(head + `\n💀 Error: ${e.message}`, m)
+    await react('💔')
+    await conn.sendMessage(m.chat, {
+      text: `${head}
+.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💔 —˙𖦹.꒷
+
+── *📝 AVISO* ╏ 🎀
+❌ ➛ Error: ${e.message}
+${footer}`
+    }, { quoted: m })
   }
 }
 
