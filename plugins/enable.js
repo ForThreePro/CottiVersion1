@@ -13,26 +13,26 @@ let handler = async (m, { conn, command, args, isOwner, isAdmin, isROwner }) => 
   }
 
   if (!args[0]) {
-    await react('💀')
-    let error = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+    await react('💔')
+    let error = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐂𝐎𝐍𝐅𝐈𝐆𝐔𝐑𝐀𝐂𝐈𝐎𝐍 ﹒ ON/OFF ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💀 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💔 —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🎃
+── *📝 AVISO* ╏ 🎀
 ❌ ➛ Falta activar o desactivar
-👻 ➛ Fantasma dice: pon on o off pe
+💅 ➛ Reina dice: pon on o off pe
 
-── *💡 USO* ╏ 🦇
+── *💡 USO* ╏ 💅
 ➛.welcome on / off
 ➛.antilink on / off
 ➛.nsfw on / off
 ➛.detect on / off
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
     return conn.sendMessage(m.chat, { text: error }, { quoted: m })
   }
@@ -87,43 +87,43 @@ let handler = async (m, { conn, command, args, isOwner, isAdmin, isROwner }) => 
   }
 
   if (fail) {
-    let lock = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+    let lock = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐀𝐂𝐄𝐒𝐎 𝐃𝐄𝐍𝐄𝐆𝐀𝐃𝐎 ﹒ ${type.toUpperCase()} ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 🔒 —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🎃
+── *📝 AVISO* ╏ 🎀
 🔒 ➛ No tienes permisos para esto
-👻 ➛ Fantasma: solo admins pueden tocar esto
+💅 ➛ Reina: solo admins pueden tocar esto
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
     return conn.sendMessage(m.chat, { text: lock }, { quoted: m })
   }
 
-  await react(isEnable? '🎃' : '💀')
+  await react(isEnable? '✨' : '💔')
 
   let estadoTexto = isEnable? 'Activado' : 'Desactivado'
-  let estadoEmoji = isEnable? '🎃' : '💀'
+  let estadoEmoji = isEnable? '✨' : '💔'
 
-  let statusTxt = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+  let statusTxt = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐂𝐎𝐍𝐅𝐈𝐆𝐔𝐑𝐀𝐂𝐈𝐎𝐍 ﹒ ${type.toUpperCase()} ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ACTUALIZADO\`\` ⚙️ —˙𖦹.꒷
 
-── *📊 ESTADO* ╏ 🎃
+── *📊 ESTADO* ╏ 🎀
 ⚙️ ➛ Función: *${type}*
 ${estadoEmoji} ➛ Estado: *${estadoTexto}*
 👑 ➛ Por: @${m.sender.split('@')[0]}
-👻 ➛ Fantasma ${isEnable? 'aprobó 🎃' : 'se fue a la tumba 💀'}
+💅 ➛ Reina ${isEnable? 'aprobó ✨' : 'se fue de shopping 💔'}
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
 
   await conn.sendMessage(m.chat, {
