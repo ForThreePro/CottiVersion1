@@ -11,30 +11,30 @@ anime: 'ANIME', internet: 'INTERNET', image: 'IMÁGENES'
 }
 
 const ICONOS_CATEGORIA = {
-info: '🎃', descargas: '🦇', buscadores: '🔮', grupo: '👻',
-fun: '💀', ia: '🧙', tools: '🕸️', sticker: '🕷️',
-config: '⚰️', owner: '👑', main: '🕯️', game: '🎃',
-rpg: '⚔️', anime: '🍭', internet: '🌙', image: '🦇'
+info: '🎀', descargas: '💖', buscadores: '🔮', grupo: '👑',
+fun: '✨', ia: '💅', tools: '🌸', sticker: '💄',
+config: '🎃', owner: '👑', main: '💋', game: '🎀',
+rpg: '💖', anime: '🌸', internet: '✨', image: '💄'
 }
 
 const TOP_COMANDOS = ['.play', '.sticker', '.ia', '.menu', '.ytmp4']
 
-const FRASES_HALLOWEEN = [
-"Truco o trato... dame dulces o te embrujo",
-"Es hora de asustar... y comer dulces",
-"La noche es larga y llena de fantasmas",
-"Cuidado con la noche de brujas",
-"Hoy toca asustar hasta amanecer",
-"Si no hay dulces, hay truco",
-"La brujería es mi superpoder",
-"Lux X Yallico - Donde los fantasmas mandan 👻",
-"Más oscuro que la noche de Halloween"
+const FRASES_COQUETTE = [
+"Truco o trato... pero con gloss reina",
+"Coquette hasta en Halloween mi amor",
+"Más linda que susto, pero susto igual",
+"Brillo, gloss y calabazas",
+"Dulce o travesura pero coquette siempre",
+"La noche es corta y yo bien coquette",
+"Cotti manda y las demás obedecen",
+"Con el moño bien puesto hasta pa' asustar",
+"Más coquette que bruja pero bruja también"
 ]
 
 let handler = async (m, { conn }) => {
 try {
 let start = performance.now()
-await conn.sendMessage(m.chat, { react: { text: '🎃', key: m.key } })
+await conn.sendMessage(m.chat, { react: { text: '🎀', key: m.key } })
 
 const fecha = moment.tz('America/Lima').format('dddd')
 const fecha2 = moment.tz('America/Lima').format('DD [de] MMMM [de] YYYY')
@@ -61,45 +61,41 @@ for (const plugin of plugins) {
 }
 
 const userName = m.pushName || 'Usuario'
-const IMG_MENU = 'https://files.evogb.win/KMrBYL.jpg'
+const IMG_MENU = 'https://files.evogb.win/0OmUpW.jpg'
 const ping = Math.round(performance.now() - start)
-const ownerNum = global.owner?.[0]?.[0] || '51927174369'
+const ownerNum = global.owner?.[0]?.[0] || '56931300864'
 const CANAL_LINK = 'https://whatsapp.com/channel/0029Vb8emrOJuyACodGSbP0z'
 
 const hourNow = moment.tz('America/Lima').hour()
 let saludo = hourNow < 12? 'Buenos días' : hourNow < 18? 'Buenas tardes' : 'Buenas noches'
-const fraseRandom = FRASES_HALLOWEEN[Math.floor(Math.random() * FRASES_HALLOWEEN.length)]
-const estadoBot = dias > 0? `Embrujado • ${dias}d ${horas}h` : `Embrujado • ${horas}h ${minutos}m`
+const fraseRandom = FRASES_COQUETTE[Math.floor(Math.random() * FRASES_COQUETTE.length)]
+const estadoBot = dias > 0? `Coquette • ${dias}d ${horas}h` : `Coquette • ${horas}h ${minutos}m`
 
-const EMOJIS_EXTRA = ['🎃','🦇','💀','👻','🕷️','🕯️','🍭','🔮','⚰️','🧟']
+const EMOJIS_EXTRA = ['🎀','💖','✨','👑','💅','🌸','🎃','🍬','💄','💋']
 let emojiIndex = 0
 
-let menuTexto = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+let menuTexto = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐕𝐄𝐑𝐒𝐈𝐎𝐍 ﹒ 3.0 HALLOWEEN EDITION ：✿ 。
 ꒰ ◞⁺⊹ ．estado: *${estadoBot}* • Ping: ${ping}ms
 
   ꒱ ׁ. ᘏ 𝗨𝗦𝗨𝗔𝗥𝗜𝗢 ׅ 𝆬 ָ֢ ෆ
-👻 ࣪ ꕀ ${saludo} @${userName}. ˚. ᵎᵎ
+💖 ࣪ ꕀ ${saludo} @${userName}. ˚. ᵎᵎ
 > *"${fraseRandom}"*
 
-🕸️ *CANAL OFICIAL*
-${CANAL_LINK}
-> _Únete para recibir hechizos_
-
-──🎃 *TOP COMANDOS* ╏ Más usados
+──🎀 *TOP COMANDOS* ╏ Más usados
 ${TOP_COMANDOS.map((c,i) => `${i+1}. ${c}`).join(' | ')}
 
-──🦇 *INFORMACION* ╏ 👻
-*Almas*: ${totalUsers} | *Hechizos*: ${pluginsCount}
+──💖 *INFORMACION* ╏ ✨
+*Reinas*: ${totalUsers} | *Hechizos*: ${pluginsCount}
 *Owner*: @${ownerNum}
 *RAM*: ${ram}mb/${totalram}gb
-*Edición*: Lux X Yallico x Halloween
+*Edición*: Cotti Bot x Halloween
 
  ׅ 埃斯 : 𝖲𝖨𝖲𝖳𝖤𝖬𝖠 ﹙ 💻 ﹚
 *${fecha}* ─ ${fecha2} ─ ${hora}
 
-> ❍ Usa. antes de cada comando 🎃
+> ❍ Usa. antes de cada comando 🎀
 
 `
 
@@ -122,13 +118,12 @@ for (const tag of tagsOrdenados) {
 }
 
 menuTexto += `━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 *Owner*: @${ownerNum}
-*Version*: 3.0 HALLOWEEN EDITION
-*${CANAL_LINK}*
+*Version*: 3.0 HALLOWEEN EDITION COQUETTE
 
-> "Truco o trato, dame dulces" 🎃
-> "Lux X Yallico - Donde los fantasmas mandan"
+> "Truco o trato, pero con gloss reina" 🎀
+> "Cotti Bot - Donde las coquette mandan"
 ━━━━━━━━━━━`
 
 await conn.sendMessage(m.chat, {
@@ -138,7 +133,7 @@ await conn.sendMessage(m.chat, {
 }, { quoted: m })
 
 } catch (e) {
-await conn.sendMessage(m.chat, { text: `💀 *ERROR FANTASMA*: ${e.message}\n🎃 Se le cayó la calabaza al bot...` }, { quoted: m })
+await conn.sendMessage(m.chat, { text: `💔 *ERROR COQUETTE*: ${e.message}\n🎀 Se le cayó el gloss al bot...` }, { quoted: m })
 }
 }
 
