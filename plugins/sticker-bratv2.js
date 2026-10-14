@@ -144,10 +144,8 @@ ${footer}`
 ❌ ➛ Error: ${e.message}
 ${footer}`
     }, { quoted: m })
-  }
-}
-
+ 
 handler.help = ['brat2 <texto>']
 handler.tags = ['sticker']
-handler.command = ['brat2', 'brat']
+handler.command = ['brat2']
 export default handler
