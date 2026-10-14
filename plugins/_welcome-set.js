@@ -12,7 +12,7 @@ let handler = async (m, { conn, args, command }) => {
   if (command.includes('welcome')) type = 'welcome'
   else if (command.includes('bye')) type = 'bye'
   else if (command.includes('kick')) type = 'kick'
-  else return m.reply('💀 Comando no válido')
+  else return m.reply('💔 Comando no válido')
 
   let text = args.join(' ').trim()
   let key = `custom${type.charAt(0).toUpperCase() + type.slice(1)}`
@@ -22,52 +22,52 @@ let handler = async (m, { conn, args, command }) => {
   }
 
   if (command.startsWith('set')) {
-    await react('🎃')
+    await react('✨')
     if (!text) {
-      let uso = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+      let uso = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐌𝐄𝐍𝐒𝐀𝐉𝐄 ﹒ ${type.toUpperCase()} ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`FORMATO\`\` ✏️ —˙𖦹.꒷
 
-── *📖 USO* ╏ 🎃
+── *📖 USO* ╏ 🎀
 ➛.${command} <texto del mensaje>
 
-── *💡 VARIABLES* ╏ 🦇
+── *💡 VARIABLES* ╏ 💅
 👤 ➛ @user = Menciona al usuario
 👥 ➛ @group = Nombre del grupo
 📄 ➛ @desc = Descripción del grupo
-👻 ➛ @ghost = Frase embrujada random
+🎀 ➛ @cotti = Frase coquette random
 
 ── *💡 EJEMPLOS* ╏ 🕯️
-➛.setwelcome Bienvenido @user a @group
+➛.setwelcome Bienvenida @user a @group
 ➛.setbye Se fue @user de @group
-➛.setkick @user fue kickeado de @group
+➛.setkick @user fue kickeada de @group
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
       return conn.sendMessage(m.chat, { text: uso }, { quoted: m })
     }
 
     chat[key] = text
-    let ok = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+    let ok = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐆𝐔𝐀𝐑𝐃𝐀𝐃𝐎 ﹒ ${type.toUpperCase()} ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`TEXTO GUARDADO\`\` ✅ —˙𖦹.꒷
 
-── *📊 INFORMACIÓN* ╏ 🎃
+── *📊 INFORMACIÓN* ╏ 🎀
 ✅ ➛ Mensaje de *${type}* guardado
-👻 ➛ Fantasma aprobó el texto
+👑 ➛ Reina aprobó el texto
 
-── *📝 VISTA PREVIA* ╏ 🦇
+── *📝 VISTA PREVIA* ╏ 💅
 💬 ➛ ${text}
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
     return conn.sendMessage(m.chat, { text: ok }, { quoted: m })
   }
@@ -75,38 +75,38 @@ let handler = async (m, { conn, args, command }) => {
   if (command.startsWith('del')) {
     await react('🗑️')
     if (!chat[key]) {
-      let vacio = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+      let vacio = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐍𝐎 𝐂𝐎𝐍𝐅𝐈𝐆𝐔𝐑𝐀𝐃𝐎 ﹒ ${type.toUpperCase()} ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`AVISO\`\` 📭 —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🎃
+── *📝 AVISO* ╏ 🎀
 📭 ➛ No hay un mensaje de *${type}* personalizado
-💀 ➛ Fantasma dice: no hay nada configurado
+💅 ➛ Reina dice: no hay nada configurado
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
       return conn.sendMessage(m.chat, { text: vacio }, { quoted: m })
     }
 
     delete chat[key]
-    let del = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+    let del = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐄𝐋𝐈𝐌𝐈𝐍𝐀𝐃𝐎 ﹒ ${type.toUpperCase()} ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`TEXTO ELIMINADO\`\` 🗑️ —˙𖦹.꒷
 
-── *📊 INFORMACIÓN* ╏ 🎃
+── *📊 INFORMACIÓN* ╏ 🎀
 🗑️ ➛ Mensaje de *${type}* eliminado
 ✅ ➛ Volverá al mensaje por defecto
-👻 ➛ Fantasma borró el texto y se fue a asustar
+👑 ➛ Reina borró el texto
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
     return conn.sendMessage(m.chat, { text: del }, { quoted: m })
   }
