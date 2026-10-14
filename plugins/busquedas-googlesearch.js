@@ -12,42 +12,42 @@ let handler = async (m, { conn, text }) => {
     }
 
     if (!text) {
-        await react('💀')
-        let error = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+        await react('💔')
+        let error = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ BUSCAR ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💀 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💔 —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🎃
+── *📝 AVISO* ╏ 🎀
 ❌ ➛ ¿Qué quieres buscar?
-👻 ➛ Fantasma: dime que buscar pe
+💅 ➛ Reina: dime que buscar pe
 
-── *💡 EJEMPLO* ╏ 🦇
-➛.google halloween embrujado
+── *💡 EJEMPLO* ╏ 💅
+➛.google halloween coquette
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
         return conn.sendMessage(m.chat, { text: error }, { quoted: m })
     }
 
-    await react('🎃')
-    await m.reply(`‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+    await react('✨')
+    await m.reply(`‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐁𝐔𝐒𝐂𝐀𝐍𝐃𝐎 ﹒ YOUTUBE ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`BUSCANDO\`\` 🔍 —˙𖦹.꒷
 
-── *📊 ESTADO* ╏ 🎃
+── *📊 ESTADO* ╏ 🎀
 🔍 ➛ Buscando: *${text}*
-⏳ ➛ Invocando espíritus...
-👻 ➛ Fantasma buscando con susto
+⏳ ➛ Invocando brillo...
+👑 ➛ Reina buscando con estilo
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`)
 
     try {
@@ -55,36 +55,36 @@ let handler = async (m, { conn, text }) => {
         let results = search.videos.slice(0, 5)
 
         if (!results.length) {
-            await react('💀')
-            let vacio = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+            await react('💔')
+            let vacio = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐒𝐈𝐍 𝐑𝐄𝐒𝐔𝐋𝐓𝐀𝐃𝐎𝐒 ﹒ BUSCAR ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`VACIO\`\` 📭 —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🎃
+── *📝 AVISO* ╏ 🎀
 📭 ➛ No encontré resultados para: *${text}*
-💀 ➛ Fantasma: ni dulces hay
+💅 ➛ Reina: ni brillo hay
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
             return conn.sendMessage(m.chat, { text: vacio }, { quoted: m })
         }
 
-        let txt = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+        let txt = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐑𝐄𝐒𝐔𝐋𝐓𝐀𝐃𝐎𝐒 ﹒ YOUTUBE ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`TOP 5\`\` 📺 —˙𖦹.꒷
 
-── *📊 BÚSQUEDA* ╏ 🎃
+── *📊 BÚSQUEDA* ╏ 🎀
 🔎 ➛ ${text}
 
 ${results.map((v, i) => {
-            return `── *${i + 1}* ╏ 🎃
+            return `── *${i + 1}* ╏ 🎀
 📺 ➛ *${v.title}*
 ⏱️ ➛ Duración: *${v.timestamp}*
 👁️ ➛ Vistas: *${v.views.toLocaleString()}*
@@ -93,39 +93,39 @@ ${results.map((v, i) => {
         }).join('\n\n')}
 
 ━━━━━━━━━━━
-── *📋 INFORMACIÓN* ╏ 🦇
+── *📋 INFORMACIÓN* ╏ 💅
 👤 ➛ Solicitado por: ${user}
 👥 ➛ Grupo: *${groupName}*
-👻 ➛ Buscado por fantasma
+👑 ➛ Buscado por reina
 
 ── *💡 TIP* ╏ 🕯️
 ➛.ytmp4 + link
 ➛.ytmp3 + link
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
 
         await conn.sendMessage(m.chat, { text: txt, mentions: [m.sender] }, { quoted: m })
-        await react('🎃')
+        await react('✨')
 
     } catch (e) {
         console.error(e)
-        await react('💀')
-        let error = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+        await react('💔')
+        let error = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ BUSCAR ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💀 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💔 —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🎃
+── *📝 AVISO* ╏ 🎀
 ❌ ➛ No se pudo realizar la búsqueda
 🔧 ➛ Intenta más tarde
-💀 ➛ Fantasma se desmayó buscando
+💅 ➛ Reina se desmayó buscando
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
         conn.sendMessage(m.chat, { text: error }, { quoted: m })
     }
