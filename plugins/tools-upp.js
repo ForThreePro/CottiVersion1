@@ -1,4 +1,3 @@
-
 import crypto from "crypto"
 import { FormData, Blob } from "formdata-node"
 import { fileTypeFromBuffer } from "file-type"
@@ -14,8 +13,21 @@ let handler = async (m, { conn }) => {
   let q = m.quoted? m.quoted : m
   let mime = (q.msg || q).mimetype || ''
   if (!mime) {
-    await react('💀')
-    return conn.reply(m.chat, `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇\n\n⤷ ┇ 𝐔𝐏𝐋𝐎𝐀𝐃𝐄𝐑 ﹒ USO ：✿ 。\n꒰ ◞⁺⊹ ．${fecha}\n\n➛ Responde a una *imagen, video, audio o documento* para subirlo. 👻`, m)
+    await react('💔')
+    return conn.sendMessage(m.chat, {
+      text: `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
+
+⤷ ┇ 𝐔𝐏𝐋𝐎𝐀𝐃𝐄𝐑 ﹒ USO ：✿ 。
+꒰ ◞⁺⊹ ．${fecha}
+
+.⃟𖥔 ݁. 𖦹˙— \`\`FORMATO\`\` 💅 —˙𖦹.꒷
+
+── *📖 USO* ╏ 🎀
+💅 ➛ Responde a una *imagen, video, audio o documento* para subirlo reina
+
+━━━━━━━━━━━
+🎀 *COTTI BOT - HALLOWEEN* 🎃`
+    }, { quoted: m })
   }
 
   try {
@@ -24,27 +36,36 @@ let handler = async (m, { conn }) => {
     let link = await myCloud(media)
     if (!link.url) throw new Error('Sin URL')
 
-    let txt = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+    let txt = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐔𝐏𝐋𝐎𝐀𝐃𝐄𝐑 ﹒ COMPLETADO ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`RESULTADO\`\` 🎃 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`RESULTADO\`\` 🎀 —˙𖦹.꒷
 
-── *📊 DATOS* ╏ 🎃
+── *📊 DATOS* ╏ 🎀
 🔗 ➛ ${link.url}
 📦 ➛ ${formatBytes(media.length)}
 🖥️ ➛ evogb.win
+✨ ➛ Subido coquette con éxito
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN* 🦇
+🎀 *COTTI BOT - HALLOWEEN* 🎃
 ━━━━━━━━━━━`
 
-    await react('🎃')
-    await conn.reply(m.chat, txt, m)
+    await react('✨')
+    await conn.sendMessage(m.chat, { text: txt }, { quoted: m })
   } catch (e) {
-    await react('💀')
-    await conn.reply(m.chat, `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇\n\n💀 Error al subir el archivo embrujado.`, m)
+    await react('💔')
+    await conn.sendMessage(m.chat, {
+      text: `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
+
+.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💔 —˙𖦹.꒷
+
+── *📝 AVISO* ╏ 🎀
+❌ ➛ Error al subir el archivo coquette 💔
+${`\n━━━━━━━━━━━\n🎀 *COTTI BOT - HALLOWEEN* 🎃`}`
+    }, { quoted: m })
   }
 }
 
@@ -62,7 +83,7 @@ async function myCloud(content) {
   const formData = new FormData()
   formData.append("file", new Blob([content], { type: mime }), `${crypto.randomBytes(5).toString("hex")}.${ext}`)
   const response = await fetch("https://evogb.win/api/upload", { method: "POST", body: formData })
-  if (!response.ok) throw new Error('Error en el servidor')
+  if (!response.ok) throw new Error('Error en el servidor coquette')
   return await response.json()
 }
 
