@@ -4,16 +4,16 @@ moment.locale('es')
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
   const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
-  const head = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇\n\n꒰ ◞⁺⊹ ．${fecha}\n`
+  const head = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n꒰ ◞⁺⊹ ．${fecha}\n`
   const react = async (t) => { try { await conn.sendMessage(m.chat, { react: { text: t, key: m.key } }) } catch {} }
 
   let url = (text || '').trim()
   if (!url.includes('instagram.com')) {
-    return conn.reply(m.chat, head + `\n💀 Usa: *${usedPrefix+command} https://www.instagram.com/reel/DeQKKA8pJ0e/*`, m)
+    return conn.reply(m.chat, head + `\n💅 Usa, reina: *${usedPrefix+command} https://www.instagram.com/reel/DeQKKA8pJ0e/* ✨`, m)
   }
 
   try {
-    await react('⏳')
+    await react('✨')
 
     let json = null
     for (let i = 0; i < 3; i++) {
@@ -28,11 +28,10 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
       }
     }
 
-    if (!json) throw new Error('API no respondió (ECONNRESET), intenta de nuevo en 5s')
+    if (!json) throw new Error('API no respondió, intenta de nuevo en 5s, reina ✨')
 
     console.log(json)
 
-    // tu json: result.url = [ "https://d.rapidcdn.app/..." ]
     let result = json.result || json.data || json
     let urls = result.url || result.urls || result.download || []
     if (!Array.isArray(urls)) urls = [urls]
@@ -40,21 +39,20 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let captionMeta = result.metadata?.caption || ''
     let likes = result.metadata?.like || ''
 
-    // limpia urls que sean objetos
     urls = urls.map(u => typeof u === 'string'? u : u?.url).filter(v => typeof v === 'string' && v.startsWith('http'))
 
     if (!urls.length) throw new Error('Sin links: ' + JSON.stringify(json).slice(0,600))
 
     for (let dl of urls.slice(0,10)) {
-      await conn.sendFile(m.chat, dl, 'ig.mp4', head + `\n📥 *IGDL*\n❤️ ${likes} | 💬 ${captionMeta.slice(0,100)}\n🔗 ${url}\n━━━━━━━━━━━━━━━`, m)
+      await conn.sendFile(m.chat, dl, 'ig.mp4', head + `\n📥 *IGDL - COTTI*\n❤️ ${likes} | 💬 ${captionMeta.slice(0,100)}\n🔗 ${url}\n━━━━━━━━━━━━━━━\n🎀 *COTTI BOT*`, m)
     }
 
-    await react('🎃')
+    await react('🎀')
 
   } catch (e) {
     console.error(e)
-    await react('💀')
-    conn.reply(m.chat, head + `\n💀 Error IG: ${e.message}\n━━━━━━━━━━━━━━━`, m)
+    await react('💔')
+    conn.reply(m.chat, head + `\n💔 Error IG, reina: ${e.message}\n━━━━━━━━━━━━━━━`, m)
   }
 }
 
