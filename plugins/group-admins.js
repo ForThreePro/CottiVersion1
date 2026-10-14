@@ -8,29 +8,29 @@ const handler = async (m, { conn, command }) => {
   }
 
   if (!m.mentionedJid[0] &&!m.quoted) {
-    await react('💀')
-    let texto = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+    await react('💔')
+    let texto = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐀𝐃𝐌𝐈𝐍𝐈𝐒𝐓𝐑𝐀𝐂𝐈𝐎𝐍 ﹒ PROMOTE ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`FORMATO\`\` 👑 —˙𖦹.꒷
 
-── *📖 USO* ╏ 🎃
-➛ Menciona a un usuario
-➛ Responde al mensaje del usuario
-👻 ➛ Fantasma: menciona pe
+── *📖 USO* ╏ 🎀
+➛ Menciona a una reina
+➛ Responde al mensaje de la reina
+💅 ➛ Reina: menciona pe
 
-── *💡 EJEMPLOS* ╏ 🦇
+── *💡 EJEMPLOS* ╏ 💖
 ➛.promote @user
 ➛.demote @user
 
-── *📝 AVISO* ╏ 🕯️
-🔒 ➛ Solo admins
-👻 ➛ Solo los que traen dulces
+── *📝 AVISO* ╏ ✨
+🔒 ➛ Solo admins coquette
+💖 ➛ Solo las que traen gloss
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
     return conn.sendMessage(m.chat, { text: texto }, { quoted: m })
   }
@@ -38,60 +38,60 @@ const handler = async (m, { conn, command }) => {
   let user = m.mentionedJid[0]? m.mentionedJid[0] : m.quoted.sender
   let action = command === 'promote' || command === 'promover' || command === 'daradmin'? 'promote' : 'demote'
 
-  await react(action === 'promote'? '🎃' : '💀')
+  await react(action === 'promote'? '✨' : '💔')
 
   try {
     await conn.groupParticipantsUpdate(m.chat, [user], action)
   } catch {
-    await react('💀')
-    let error = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+    await react('💔')
+    let error = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐄𝐑𝐎𝐑 ﹒ ADMIN ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💀 —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🎃
-❌ ➛ No se pudo completar la acción
-🔒 ➛ Verifica permisos del bot
-👻 ➛ Fantasma dice: el bot no es admin pe
+── *📝 AVISO* ╏ 🎀
+❌ ➛ No se pudo completar la acción reina
+🔒 ➛ Verifica permisos del bot coquette
+💅 ➛ La coquette dice: el bot no es admin pe
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
     return conn.sendMessage(m.chat, { text: error }, { quoted: m })
   }
 
   let msgAccion = action === 'promote'
-? `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+? `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
-⤷ ┇ 𝐏𝐑𝐎𝐌𝐎𝐕𝐈𝐃𝐎 ﹒ NUEVO ADMIN ：✿ 。
+⤷ ┇ 𝐏𝐑𝐎𝐌𝐎𝐕𝐈𝐃𝐀 ﹒ NUEVA ADMIN ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`EXITO\`\` 🎃 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`EXITO\`\` ✨ —˙𖦹.꒷
 
-── *📊 INFORMACIÓN* ╏ 🎃
-🎃 ➛ Nuevo Admin: @${user.split('@')[0]}
-👤 ➛ Por: @${m.sender.split('@')[0]}
-👻 ➛ Fantasma aprobó al nuevo admin
+── *📊 INFORMACIÓN* ╏ 🎀
+👑 ➛ Nueva Admin: @${user.split('@')[0]}
+💖 ➛ Por: @${m.sender.split('@')[0]}
+✨ ➛ Cotti aprobó a la nueva reina
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
-    : `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+    : `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
-⤷ ┇ 𝐃𝐄𝐆𝐑𝐀𝐃𝐀𝐃𝐎 ﹒ QUITAR ADMIN ：✿ 。
+⤷ ┇ 𝐃𝐄𝐆𝐑𝐀𝐃𝐀 ﹒ QUITAR ADMIN ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`EXITO\`\` 💀 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`EXITO\`\` 💔 —˙𖦹.꒷
 
-── *📊 INFORMACIÓN* ╏ 🎃
-💀 ➛ Ya no es Admin: @${user.split('@')[0]}
-👤 ➛ Por: @${m.sender.split('@')[0]}
-👻 ➛ Fantasma le quitó el poder
+── *📊 INFORMACIÓN* ╏ 🎀
+💔 ➛ Ya no es Admin: @${user.split('@')[0]}
+💖 ➛ Por: @${m.sender.split('@')[0]}
+🎀 ➛ Cotti le quitó el gloss
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
 
   await conn.sendMessage(m.chat, { text: msgAccion, mentions: [user, m.sender] }, { quoted: m })
