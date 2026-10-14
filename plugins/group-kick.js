@@ -10,24 +10,24 @@ let handler = async (m, { conn, participants }) => {
     let mentionedJid = m.mentionedJid && m.mentionedJid[0]? m.mentionedJid[0] : m.quoted? m.quoted.sender : null
 
     if (!mentionedJid) {
-        await react('💀')
-        let error = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+        await react('💔')
+        let error = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐄𝐗𝐏𝐔𝐋𝐒𝐀𝐑 ﹒ USUARIO ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`FORMATO\`\` 👢 —˙𖦹.꒷
 
-── *📖 USO* ╏ 🎃
-➛ Menciona a un usuario
-➛ Responde al mensaje del usuario
-👻 ➛ Fantasma: apunta bien pe
+── *📖 USO* ╏ 🎀
+➛ Menciona a una reina
+➛ Responde al mensaje de la reina
+💅 ➛ Cotti: apunta bien pe
 
-── *📝 AVISO* ╏ 🦇
-🔒 ➛ Solo admins
+── *📝 AVISO* ╏ ✨
+🔒 ➛ Solo admins coquette
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
         return conn.sendMessage(m.chat, { text: error }, { quoted: m })
     }
@@ -41,57 +41,57 @@ let handler = async (m, { conn, participants }) => {
         let isAdmin = user?.admin
 
         if (mentionedJid === conn.user.jid) {
-            await react('💀')
-            return conn.sendMessage(m.chat, { text: `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇\n\n⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ KICK ：✿ 。\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🎃\n❌ ➛ No puedo exorcizarme a mí mismo\n👻 ➛ Fantasma no se auto-banea\n━━━━━━━━━━━\n🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇` }, { quoted: m })
+            await react('💔')
+            return conn.sendMessage(m.chat, { text: `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ KICK ：✿ 。\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🎀\n❌ ➛ No puedo exorcizarme a mí misma reina\n💅 ➛ Cotti no se auto-banea\n━━━━━━━━━━━\n🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃` }, { quoted: m })
         }
         if (mentionedJid === ownerGroup) {
-            await react('💀')
-            return conn.sendMessage(m.chat, { text: `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇\n\n⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ KICK ：✿ 。\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🎃\n❌ ➛ No puedo expulsar al propietario del grupo\n━━━━━━━━━━━\n🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇` }, { quoted: m })
+            await react('💔')
+            return conn.sendMessage(m.chat, { text: `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ KICK ：✿ 。\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🎀\n❌ ➛ No puedo expulsar al propietario del grupo\n━━━━━━━━━━━\n🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃` }, { quoted: m })
         }
         if (mentionedJid === ownerBot) {
-            await react('💀')
-            return conn.sendMessage(m.chat, { text: `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇\n\n⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ KICK ：✿ 。\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🎃\n❌ ➛ No puedo expulsar al dueño del bot\n━━━━━━━━━━━\n🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇` }, { quoted: m })
+            await react('💔')
+            return conn.sendMessage(m.chat, { text: `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ KICK ：✿ 。\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🎀\n❌ ➛ No puedo expulsar al dueño del bot reina\n━━━━━━━━━━━\n🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃` }, { quoted: m })
         }
         if (isAdmin) {
-            await react('💀')
-            return conn.sendMessage(m.chat, { text: `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇\n\n⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ KICK ：✿ 。\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🎃\n❌ ➛ No puedo expulsar a un administrador\n━━━━━━━━━━━\n🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇` }, { quoted: m })
+            await react('💔')
+            return conn.sendMessage(m.chat, { text: `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ KICK ：✿ 。\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🎀\n❌ ➛ No puedo expulsar a una admin coquette\n━━━━━━━━━━━\n🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃` }, { quoted: m })
         }
 
         await react('👢')
         await conn.groupParticipantsUpdate(m.chat, [mentionedJid], 'remove')
 
-        let kickMsg = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+        let kickMsg = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
-⤷ ┇ 𝐄𝐗𝐏𝐔𝐋𝐒𝐀𝐃𝐎 ﹒ USUARIO ：✿ 。
+⤷ ┇ 𝐄𝐗𝐏𝐔𝐋𝐒𝐀𝐃𝐀 ﹒ USUARIO ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`EXITO\`\` 👢 —˙𖦹.꒷
 
-── *📊 INFORMACIÓN* ╏ 🎃
+── *📊 INFORMACIÓN* ╏ 🎀
 👢 ➛ Usuario: @${mentionedJid.split('@')[0]}
 👑 ➛ Por: @${m.sender.split('@')[0]}
-👻 ➛ Fantasma le dio su patada embrujada
+✨ ➛ Cotti le dio su patada con brillo
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
         conn.sendMessage(m.chat, { text: kickMsg, mentions: [mentionedJid, m.sender] }, { quoted: m })
     } catch (e) {
-        await react('💀')
-        let error = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+        await react('💔')
+        let error = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ KICK ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💀 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💔 —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🎃
-❌ ➛ Se ha producido un problema
+── *📝 AVISO* ╏ 🎀
+❌ ➛ Se ha producido un problema reina
 🔧 ➛ ${e.message}
-👻 ➛ Fantasma se asustó
+💅 ➛ Cotti se asustó
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
         conn.sendMessage(m.chat, { text: error }, { quoted: m })
     }
