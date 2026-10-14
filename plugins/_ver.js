@@ -5,57 +5,57 @@ let handler = async (m, { conn }) => {
 const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
 
 if (!m.quoted) {
-  let error = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+  let error = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ VER ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💀 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💔 —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🎃
+── *📝 AVISO* ╏ 🎀
 ❌ ➛ Responde a una imagen/video ViewOnce
-👻 ➛ Fantasma: "Ni veo si no respondes"
+💅 ➛ Reina: "Ni veo si no respondes"
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
   return conn.reply(m.chat, error, m)
 }
 
 if (!m?.quoted || !m?.quoted?.viewOnce) {
-  let error = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+  let error = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐄𝐑𝐎𝐑 ﹒ VER ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💀 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💔 —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🎃
+── *📝 AVISO* ╏ 🎀
 ❌ ➛ El mensaje no es ViewOnce
-💀 ➛ Fantasma dice: "Eso no se borra solo"
+💅 ➛ Reina dice: "Eso no se borra solo"
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
   return conn.reply(m.chat, error, m)
 }
 
 let buffer = await m.quoted.download(false);
 
-let ok = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+let ok = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐃𝐄𝐒𝐁𝐋𝐎𝐐𝐔𝐄𝐀𝐃𝐎 ﹒ VIEWONCE ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`EXITO\`\` ✅ —˙𖦹.꒷
 
-── *📊 INFORMACIÓN* ╏ 🎃
+── *📊 INFORMACIÓN* ╏ 🎀
 ✅ ➛ Imagen/Video desbloqueado
-👻 ➛ Fantasma lo vio todo
-🎃 ➛ Nada se esconde en la noche de brujas
+👑 ➛ Reina lo vio todo
+✨ ➛ Nada se esconde del brillo coquette
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
 
 if (/videoMessage/.test(m.quoted.mtype)) {
