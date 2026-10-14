@@ -1,4 +1,8 @@
 import axios from 'axios'
+import fs from 'fs'
+import path from 'path'
+import { tmpdir } from 'os'
+import ffmpeg from 'fluent-ffmpeg'
 
 let handler = async (m, { conn, text }) => {
   let txt = text || m.quoted?.text || m.quoted?.caption || ''
@@ -18,8 +22,6 @@ let handler = async (m, { conn, text }) => {
     })
 
     let buffer = Buffer.from(res.data)
-
-    // Si FAA devuelve JSON con url
     if (res.headers['content-type']?.includes('application/json')) {
       const j = JSON.parse(buffer.toString())
       let url = j.result || j.url || j.data
@@ -28,7 +30,30 @@ let handler = async (m, { conn, text }) => {
       buffer = Buffer.from(img.data)
     }
 
-    await conn.sendMessage(m.chat, { sticker: buffer }, { quoted: m })
+    // Convierte PNG de FAA a WEBP sticker
+    let tmpPng = path.join(tmpdir(), `brat-${Date.now()}.png`)
+    let tmpWebp = path.join(tmpdir(), `brat-${Date.now()}.webp`)
+    fs.writeFileSync(tmpPng, buffer)
+
+    await new Promise((resolv, rej) => {
+      ffmpeg(tmpPng)
+        .inputOptions(['-y'])
+        .size('512x512')
+        .aspect('1:1')
+        .autopad(true, '#ffffff')
+        .outputOptions(['-vcodec','libwebp','-lossless','0','-q:v','90','-preset','picture','-an','-loop','0'])
+        .toFormat('webp')
+        .on('end', resolv)
+        .on('error', rej)
+        .save(tmpWebp)
+    })
+
+    const stickerBuffer = fs.readFileSync(tmpWebp)
+
+    await conn.sendMessage(m.chat, { sticker: stickerBuffer }, { quoted: m })
+
+    try { fs.unlinkSync(tmpPng); fs.unlinkSync(tmpWebp) } catch {}
+
     await conn.sendMessage(m.chat, { react: { text: '✨', key: m.key } })
 
   } catch (e) {
