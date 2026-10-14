@@ -12,46 +12,46 @@ let handler = async (m, { conn }) => {
         let link = await conn.groupInviteCode(m.chat)
         let groupMetadata = await conn.groupMetadata(m.chat)
 
-        let texto = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+        let texto = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐋𝐈𝐍𝐊 ﹒ DEL GRUPO ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`INVITACIÓN\`\` 🔗 —˙𖦹.꒷
 
-── *📊 INFORMACIÓN* ╏ 🎃
+── *📊 INFORMACIÓN* ╏ 🎀
 👥 ➛ Grupo: *${groupMetadata.subject}*
-👻 ➛ Fantasma te pasa el link
+✨ ➛ Cotti te pasa el link brilloso
 
-── *🔗 ENLACE* ╏ 🦇
+── *🔗 ENLACE* ╏ 💖
 https://chat.whatsapp.com/${link}
 
-── *📝 NOTAS* ╏ 🕯️
+── *📝 NOTAS* ╏ ✨
 🔒 ➛ Solo admins pueden resetear el link
-⚠️ ➛ No lo compartas con desconocidos
-🎃 ➛ Lux X Yallico lo aprueba
+💅 ➛ No lo compartas con sin brillo
+🎀 ➛ Cotti lo aprueba con gloss
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
 
         await conn.sendMessage(m.chat, { text: texto }, { quoted: m })
     } catch (e) {
-        await react('💀')
-        let error = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+        await react('💔')
+        let error = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐄𝐑𝐎𝐑 ﹒ LINK ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💀 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💔 —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🎃
-❌ ➛ No pude obtener el link
+── *📝 AVISO* ╏ 🎀
+❌ ➛ No pude obtener el link reina
 🔒 ➛ ¿Soy admin del grupo?
-👻 ➛ Fantasma dice: hazme admin pe
+💅 ➛ Cotti dice: hazme admin pe
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
         conn.sendMessage(m.chat, { text: error }, { quoted: m })
     }
