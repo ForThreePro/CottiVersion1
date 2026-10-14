@@ -8,23 +8,72 @@ Array.prototype.getRandom = function(){ return this[Math.floor(Math.random()*thi
 let handler = async (m, { groupMetadata, command, conn, text }) => {
     const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
     const react = async (t) => { try { await conn.sendMessage(m.chat, { react: { text: t, key: m.key } }) } catch {} }
-    const head = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇\n\n꒰ ◞⁺⊹ ．${fecha}\n`
+    const head = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
-    if (!groupMetadata) return m.reply(head+`\n💀 Solo en grupos embrujados`, m)
-    if (!text) { await react('💀'); return m.reply(head+`\n🎃 Usa: *.top <motivo>*\nEj: *.top Más activos*`, m) }
+⤷ ┇ 𝐓𝐎𝐏 ﹒ 10 ：✿ 。
+꒰ ◞⁺⊹ ．${fecha}\n`
+
+    if (!groupMetadata) {
+        let txt = `${head}
+.⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 💔 —˙𖦹.꒷
+
+── *📝 AVISO* ╏ 🎀
+❌ ➛ Solo en grupos coquette
+
+━━━━━━━━━━━
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
+━━━━━━━━━━━`
+        return conn.sendMessage(m.chat, { text: txt }, { quoted: m })
+    }
+    if (!text) {
+        await react('💅')
+        let txt = `${head}
+.⃟𖥔 ݁. 𖦹˙— \`\`FORMATO\`\` 👑 —˙𖦹.꒷
+
+── *📖 USO* ╏ 🎀
+💅 ➛ Usa: *.top <motivo>*
+✨ ➛ Ejemplo: *.top Más lindas*
+
+━━━━━━━━━━━
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
+━━━━━━━━━━━`
+        return conn.sendMessage(m.chat, { text: txt }, { quoted: m })
+    }
 
     let ps = groupMetadata.participants.map(v=>v.id)
-    if (ps.length < 10) { await react('⚠️'); return m.reply(head+`\n⚠️ Mínimo 10 almas`, m) }
+    if (ps.length < 10) {
+        await react('⚠️')
+        let txt = `${head}
+.⃟𖥔 ݁. 𖦹˙— \`\`AVISO\`\` ⚠️ —˙𖦹.꒷
+
+── *📝 INFO* ╏ 🎀
+⚠️ ➛ Mínimo 10 reinas
+
+━━━━━━━━━━━
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
+━━━━━━━━━━━`
+        return conn.sendMessage(m.chat, { text: txt }, { quoted: m })
+    }
 
     let picks = Array.from({length:10},()=>ps.getRandom())
-    let x = pickRandom(['🎃','🦇','💀','👻','🕷️','🕯️','😈','🍬','🔮','⚰️'])
+    let x = pickRandom(['🎀','💖','✨','👑','💅','🌸','🎃','🍬','💄','💋'])
 
-    let top = head + `\n🏆 *TOP 10 ${text.toUpperCase()}* ${x}\n\n` +
-      picks.map((p,i)=>`${x} *${i+1}.* ${user(p)}`).join('\n') +
-      `\n\n🎲 Aleatorio de la cripta`
+    let top = `${head}
+.⃟𖥔 ݁. 𖦹˙— \`\`TOP 10\`\` ${x} —˙𖦹.꒷
+
+── *🏆 ${text.toUpperCase()}* ╏ 🎀
+${picks.map((p,i)=>`${x} *${i+1}.* ${user(p)}`).join('\n')}
+
+── *📝 NOTA* ╏ ✨
+🎲 ➛ Aleatorio de la cripta coquette
+💅 ➛ Cotti eligió
+
+━━━━━━━━━━━
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
+━━━━━━━━━━━`
 
     await react(x)
-    return m.reply(top, null, { mentions: picks })
+    return conn.sendMessage(m.chat, { text: top, mentions: picks }, { quoted: m })
 }
 
 handler.help = ['top <texto>']
