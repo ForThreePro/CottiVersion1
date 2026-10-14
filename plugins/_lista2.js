@@ -12,7 +12,6 @@ let handler = async (m, { conn }) => {
     const db = path.join(DB_FOLDER, `${chatId}.json`)
     const fecha = moment.tz('America/Lima').format('DD/MM/YYYY')
     const hora = moment.tz('America/Lima').format('hh:mm:ss a')
-    const ownerNum = global.owner?.[0]?.[0] || '51927174369'
 
     if (!fs.existsSync(db)) fs.writeFileSync(db, JSON.stringify([]))
 
@@ -25,20 +24,20 @@ let handler = async (m, { conn }) => {
 
     if (total === 0) {
         await react('📭')
-        let vacia = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+        let vacia = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐁𝐎𝐑𝐑𝐀𝐑 𝐋𝐈𝐒𝐓𝐀 ﹒ LISTA ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`LISTA VACÍA\`\` 🗑️ —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🎃
+── *📝 AVISO* ╏ 🎀
 📭 ➛ La lista de este grupo ya está vacía
 📭 ➛ No hay registros para borrar
-💀 ➛ Fantasma: "Ni siquiera hay dulces para borrar"
+💅 ➛ Reina: "Ni siquiera hay brillo para borrar"
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
 ━━━━━━━━━━━`
         return conn.sendMessage(m.chat, { text: vacia }, { quoted: m })
     }
@@ -46,26 +45,26 @@ let handler = async (m, { conn }) => {
     await react('🗑️')
     fs.writeFileSync(db, JSON.stringify([]))
 
-    let texto = `‧˚꒰🎃୭ 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🦇
+    let texto = `‧˚꒰🎃୭ 𓆩 𝗖𝗢𝗧𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀
 
 ⤷ ┇ 𝐁𝐎𝐑𝐑𝐀𝐃𝐎 ﹒ LISTA ：✿ 。
 ꒰ ◞⁺⊹ ．${fecha} ${hora}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`BORRADO EXITOSO\`\` 🗑️ —˙𖦹.꒷
 
-── *📊 INFORMACIÓN* ╏ 🎃
+── *📊 INFORMACIÓN* ╏ 🎀
 🗑️ ➛ Se eliminaron: *${total}* registro${total > 1 ? 's' : ''}
 📅 ➛ Rango: *Lunes a Sábado*
 ⏰ ➛ Hora: *${hora}*
-👻 ➛ Fantasma se comió la lista
+👑 ➛ Reina se comió la lista
 
-── *📦 ESTADO* ╏ 🦇
+── *📦 ESTADO* ╏ 💅
 ✅ ➛ Lista de este grupo reiniciada
-🍬 ➛ Lista limpia como calabaza vacía
+✨ ➛ Lista limpia como espejo coquette
 
 ━━━━━━━━━━━
-🎃 *LUX X YALLICO - HALLOWEEN EDITION* 🦇
-*Admin*: Comando ejecutado por fantasma
+🎀 *COTTI BOT - HALLOWEEN EDITION* 🎃
+*Admin*: Comando ejecutado por la reina
 ━━━━━━━━━━━`
 
     return conn.sendMessage(m.chat, { text: texto }, { quoted: m })
