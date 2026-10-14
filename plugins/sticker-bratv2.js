@@ -149,5 +149,5 @@ ${footer}`
 
 handler.help = ['brat2 <texto>']
 handler.tags = ['sticker']
-handler.command = /^brat2$/i
+handler.command = ['brat2', 'brat']
 export default handler
