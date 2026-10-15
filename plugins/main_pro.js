@@ -27,11 +27,11 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 .⃟𖥔 ݁. 𖦹˙— \`\`DUEÑA\`\` 👑 —˙𖦹.꒷
 
 ── *📊 INFO* ╏ 🎀
-👑 ➛ Dueña coquette: +51 927 174 369
-💖 ➛ wa.me/51927174369
+👑 ➛ Dueña coquette: +56 9 3130 0864
+💖 ➛ wa.me/56931300864
 ✨ ➛ Cotti la adora
 ${footer}`,
-            mentions:['51927174369@s.whatsapp.net']
+            mentions:['56931300864@s.whatsapp.net']
         }, { quoted:m })
     }
     if (command==='ping'||command==='p') {
