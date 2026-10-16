@@ -481,20 +481,20 @@ export async function handler(chatUpdate) {
 
 global.dfail = (type, m, conn, usedPrefix) => {
     let msg = {
-        rowner: "🍕 *ZZZ* Solo el dueño principal puede usar esto. Garfield está durmiendo 😼",
-        owner: "🍕 *ACCESO DENEGADO* Solo los creadores de Garfield Bot pueden usar este comando.",
-        premium: "🍕 *¡LASAGNA PREMIUM!* Necesitas ser Premium para usar este comando. Compra con @Garfiel Store ⚡",
-        premsubs: '🍕 *BOT PREMIUM* Esta función solo la usan los Subbots Premium de Garfield.',
-        group: "🍕 *MIAU* Este comando solo funciona en grupos. No en privado.",
-        private: "🍕 *SHHH* Usa este comando en privado conmigo.",
-        admin: "🍕 *PERMISO* Necesitas ser admin del grupo para usar esto.",
-        botAdmin: "🍕 *DAME ADMIN* Dame admin primero para que pueda trabajar por lasaña.",
+        rowner: "‧˚꒰🎀୭ 𓆩 𝗖𝗢𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n💤 *Solo mi creador puede usar esto* ୨୧ Mi dueña está descansando.",
+        owner: "‧˚꒰🎀୭ 𓆩 𝗖𝗢𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n🚫 *ACCESO DENEGADO* ୨୧ Solo las creadoras de Cotti pueden usar este comando.",
+        premium: "‧˚꒰🎀୭ 𓆩 𝗖𝗢𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n💅 *¡PREMIUM NEEDED!* ୨୧ Necesitas ser Premium para usar esto.\n✨ Compra con Coti Store.",
+        premsubs: "‧˚꒰🎀୭ 𓆩 𝗖𝗢𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n👑 *BOT PREMIUM* ୨୧ Esta función es solo para SubBots Premium de Cotti.",
+        group: "‧˚꒰🎀୭ 𓆩 𝗖𝗢𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n👥 *Solo grupos* ୨୧ Este comando solo funciona en grupos, no en privado.",
+        private: "‧˚꒰🎀୭ 𓆩 𝗖𝗢𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n🤫 *Solo privado* ୨୧ Usa este comando en mi privado, a solas.",
+        admin: "‧˚꒰🎀୭ 𓆩 𝗖𝗢𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n💋 *Permiso* ୨୧ Necesitas ser admin del grupo para usar esto.",
+        botAdmin: "‧˚꒰🎀୭ 𓆩 𝗖𝗢𝗧𝗜 𝗕𝗢𝗧 𓆪 🎀\n\n💅 *DAME ADMIN* ୨୧ Dame admin primero para poder trabajar, preciosa.",
     }[type]
-    if (msg) return conn.reply(m.chat, `*${msg}*`, m).then(_ => m.react('🍕'))
+    if (msg) return conn.reply(m.chat, `*${msg}*`, m).then(_ => m.react('🎀'))
 }
 let file = global.__filename(import.meta.url, true)
 watchFile(file, async () => {
     unwatchFile(file)
-    console.log(chalk.hex('#FFD700')("😼 Se actualizo 'handler.js' - Garfield despierto para más lasaña"))
+    console.log(chalk.hex('#FF9ECF')("🎀 Se actualizo 'handler.js' - Cotti Bot despierta más linda que nunca 💅"))
     if (global.reloadHandler) console.log(await global.reloadHandler())
 })
